@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
+import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
+import 'package:pustaka_app/widget/pustaka_artikel_list_item.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,17 +42,40 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            PustakaIconMenu(
-                              images: 'assets/menu/puskesmas.svg',
-                              title: "Puskesmas",
+                            GestureDetector(
+                              child: Container(
+                                 child: PustakaIconMenu(
+                                    images: 'assets/menu/puskesmas.svg',
+                                    title: "Puskesmas",
+                                  ),
+                              ),
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => PuskesmasMenuScreen()));
+                              },
                             ),
-                            PustakaIconMenu(
-                              images: 'assets/menu/lihatantrian.svg',
-                              title: "Lihat Antrian",
+
+                            GestureDetector(
+                              child: Container(
+                                 child: PustakaIconMenu(
+                                   images: 'assets/menu/lihatantrian.svg',
+                                   title: "Lihat Antrian",
+                                 ),
+                              ),
+                              onTap: (){
+                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Lihat Antrian')));
+                              },
                             ),
-                            PustakaIconMenu(
-                              images: 'assets/menu/daftarantri.svg',
-                              title: "Daftar Antri",
+
+                            GestureDetector(
+                              child: Container(
+                                child:    PustakaIconMenu(
+                                  images: 'assets/menu/daftarantri.svg',
+                                  title: "Daftar Antri",
+                                ),
+                              ),
+                              onTap: (){
+                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Daftar Antri')));
+                              },
                             ),
                           ],
                         ),
@@ -100,20 +125,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 12.0),
                     height: 200.0,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child:
-                          Image.asset('assets/images/bannerartikel.png'),
+                          child: Image.asset('assets/images/bannerartikel2.png', width: 285, height: 220,),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 8.0),
                           child:
-                          Image.asset('assets/images/bannerartikel2.png'),
+                          Image.asset('assets/images/bannerartikel2.png',width: 285, height: 220),
                         ),
                       ],
                     ),

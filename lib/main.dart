@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
+import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       title: 'Pustaka App',
       initialRoute: HomeScreen.id,
       routes:{
-        HomeScreen.id : (context) => HomeScreen()
+        HomeScreen.id : (context) => HomeScreen(),
+        PuskesmasMenuScreen.id : (context) => PuskesmasMenuScreen()
       },
     );
   }
