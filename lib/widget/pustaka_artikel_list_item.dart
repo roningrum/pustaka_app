@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pustaka_app/const.dart';
 
 class PustakaArtikelListItem extends StatefulWidget {
   @override

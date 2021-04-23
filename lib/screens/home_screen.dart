@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                               ),
                               onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => PuskesmasMenuScreen()));
+                                Navigator.of(context).pushNamed(PuskesmasMenuScreen.id);
                               },
                             ),
 

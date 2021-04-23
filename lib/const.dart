@@ -4,6 +4,9 @@ const kPrimaryColor = Color(0xFF019934);
 const kSurfaceColor = Color(0xFFFFFFFF);
 const kFontColor = Color(0xFF00170C);
 
+//URL
+const String PUSTAKA_URL = 'http://119.2.50.170:9095/pustaka/home';
+
 const kPustakaBlackBoldMedium = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.bold,
