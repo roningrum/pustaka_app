@@ -34,6 +34,14 @@ const kPustakaGreenMedium= TextStyle(
     fontFamily: 'Poppins',
     color: kPrimaryColor
 );
+
+const kPustakaWhiteMedium= TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+    color: kSurfaceColor
+);
+
 fivePercentWidth(BuildContext context) {
   return MediaQuery.of(context).size.width * 0.05;
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pustaka_app/const.dart';
+import 'package:pustaka_app/screens/puskesmas_detail_page.dart';
 
 class PuskesmasItemList extends StatelessWidget {
   final String foto, nama, alamat;
@@ -11,11 +12,10 @@ class PuskesmasItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () {},
-        child: Card(
+    return Card(
           elevation: 0,
           child: Container(
+            height: 100,
             margin: EdgeInsets.all(10),
             child: Row(
               children: <Widget>[
@@ -48,6 +48,8 @@ class PuskesmasItemList extends StatelessWidget {
                         margin: EdgeInsets.only(right: 12, top: 10),
                         child: Text(
                           alamat,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: kPustakaBlackRegular.copyWith(
                               fontSize: 12, fontWeight: FontWeight.w100),
                         ),
@@ -75,6 +77,6 @@ class PuskesmasItemList extends StatelessWidget {
               ],
             ),
           ),
-        ));
+        );
   }
 }
