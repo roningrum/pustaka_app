@@ -6,6 +6,7 @@ const kFontColor = Color(0xFF00170C);
 
 //URL
 const String PUSTAKA_URL = 'http://119.2.50.170:9095/pustaka/home';
+const String Whatsapp_URL = 'https://wa.me';
 
 const kPustakaBlackBoldMedium = TextStyle(
   fontSize: 20,
@@ -38,6 +39,12 @@ const kPustakaGreenMedium= TextStyle(
 const kPustakaWhiteMedium= TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+    color: kSurfaceColor
+);
+const kPustakaWhiteNormal= TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
     fontFamily: 'Poppins',
     color: kSurfaceColor
 );

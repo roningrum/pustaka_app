@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
 import 'package:pustaka_app/screens/puskesmas_detail_page.dart';
+import 'package:pustaka_app/screens/puskesmas_peta.dart';
 import 'package:pustaka_app/widget/loading_puskesmas_widget.dart';
 import 'package:pustaka_app/widget/puskesmas_item_list.dart';
 import '../const.dart';
@@ -68,7 +69,9 @@ class _PuskesmasMenuScreenState extends State<PuskesmasMenuScreen> {
             ),
             IconButton(
               icon: Icon(Icons.location_on_outlined, color: kFontColor),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(PuskesmasPeta.id);
+              },
             ),
           ],
           title: Text('Puskesmas',

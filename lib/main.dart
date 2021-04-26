@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
+import 'package:pustaka_app/screens/puskesmas_peta.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
           initialRoute: HomeScreen.id,
           routes:{
             HomeScreen.id : (context) => HomeScreen(),
-            PuskesmasMenuScreen.id : (context) => PuskesmasMenuScreen()
+            PuskesmasMenuScreen.id : (context) => PuskesmasMenuScreen(),
+            PuskesmasPeta.id : (context) => PuskesmasPeta(),
           }
       ),
     );
