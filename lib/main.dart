@@ -4,6 +4,7 @@ import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_peta.dart';
+import 'package:pustaka_app/screens/puskesmas_search.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
             HomeScreen.id : (context) => HomeScreen(),
             PuskesmasMenuScreen.id : (context) => PuskesmasMenuScreen(),
             PuskesmasPeta.id : (context) => PuskesmasPeta(),
+            PuskesmasSearch.id : (context) => PuskesmasSearch(),
           }
       ),
     );

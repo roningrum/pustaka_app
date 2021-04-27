@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
-import 'package:pustaka_app/widget/puskesmas_item_list.dart';
 
 import '../const.dart';
 
@@ -42,11 +42,17 @@ class MapPuskesmas extends StatefulWidget {
 
 class _MapPuskesmasState extends State<MapPuskesmas> {
   Iterable markers = [];
+  String _mapstyle;
+  GoogleMapController mapController;
+  BitmapDescriptor myIcon;
 
   @override
   void initState() {
     super.initState();
     getDataPuskesmas();
+    rootBundle.loadString('assets/map_style.txt').then((string) => {
+      _mapstyle = string
+    });
   }
 
   @override
@@ -56,7 +62,10 @@ class _MapPuskesmasState extends State<MapPuskesmas> {
           markers: Set.from(markers),
           initialCameraPosition: CameraPosition(
               target: const LatLng(-6.9873131, 110.4143132), zoom: 14.0),
-          onMapCreated: (GoogleMapController controller) {}),
+          onMapCreated: (GoogleMapController controller) {
+            mapController = controller;
+            mapController.setMapStyle(_mapstyle);
+          }),
     );
   }
 
