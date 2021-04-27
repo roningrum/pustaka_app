@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:pustaka_app/helper/puskesmas_list.dart';
+import 'package:pustaka_app/widget/puskesmas_item_list.dart';
 
 import '../const.dart';
 
@@ -40,23 +41,45 @@ class MapPuskesmas extends StatefulWidget {
 }
 
 class _MapPuskesmasState extends State<MapPuskesmas> {
-  GoogleMapController mapController;
+  Iterable markers = [];
 
-  final LatLng _center = const LatLng(-7.0247246,110.3470246);
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
+  @override
+  void initState() {
+    super.initState();
+    getDataPuskesmas();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
+          markers: Set.from(markers),
           initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 11.0,
-          ),
-          onMapCreated: _onMapCreated),
+              target: const LatLng(-6.9873131, 110.4143132), zoom: 14.0),
+          onMapCreated: (GoogleMapController controller) {}),
     );
+  }
+
+  void getDataPuskesmas() async {
+    try {
+      PuskesmasList puskesmasItem = PuskesmasList();
+      await puskesmasItem.getPuskesmas();
+      Iterable _markers =
+          Iterable.generate(puskesmasItem.puskesmasList.length, (index) {
+        LatLng latLng = LatLng(
+            double.parse(puskesmasItem.puskesmasList[index].latitude),
+            double.parse(puskesmasItem.puskesmasList[index].longitude));
+        return Marker(
+            markerId: MarkerId(puskesmasItem.puskesmasList[index].id_sarkes),
+            position: latLng,
+            infoWindow:
+                InfoWindow(title: puskesmasItem.puskesmasList[index].nama));
+      });
+      setState(() {
+        markers = _markers;
+      });
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }
