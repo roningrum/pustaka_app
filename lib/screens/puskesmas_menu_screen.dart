@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pustaka_app/data/puskesmas.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
 import 'package:pustaka_app/screens/puskesmas_detail_page.dart';
 import 'package:pustaka_app/screens/puskesmas_peta.dart';
