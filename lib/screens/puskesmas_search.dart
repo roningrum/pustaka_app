@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toast/toast.dart';
-
+import 'package:fluttertoast/fluttertoast.dart';
 import '../const.dart';
 
 class PuskesmasSearch extends StatefulWidget {
@@ -11,6 +10,21 @@ class PuskesmasSearch extends StatefulWidget {
 }
 
 class _PuskesmasSearchState extends State<PuskesmasSearch> {
+  TextEditingController searchController = TextEditingController();
+
+  filterPuskesmas() {
+    print('current text ${searchController.text}');
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    searchController.addListener(() {
+      filterPuskesmas();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,46 +44,29 @@ class _PuskesmasSearchState extends State<PuskesmasSearch> {
                 height: 55,
                 padding: EdgeInsets.symmetric(vertical: 4),
                 child: TextField(
-                    autocorrect: true,
-                    decoration: InputDecoration(
-                      hintText: 'Type Text Here...',
-                      contentPadding: EdgeInsets.all(10.0),
-                      hintStyle: kPustakaBlackBoldMedium.copyWith(fontSize: 15, color: Color(0xFF4D4D4D)),
-                      filled: true,
-                      fillColor: Color(0xFFE9E8E8),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(4)),
-                        borderSide: BorderSide(color: Colors.transparent, width: 1),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(4)),
-                        borderSide: BorderSide(color: Colors.transparent, width: 1),
-                      ),
+                  autocorrect: true,
+                  controller: searchController,
+                  decoration: InputDecoration(
+                    hintText: 'Type Text Here...',
+                    contentPadding: EdgeInsets.all(10.0),
+                    hintStyle: kPustakaBlackBoldMedium.copyWith(
+                        fontSize: 15, color: Color(0xFF4D4D4D).withOpacity(0.5)),
+                    filled: true,
+                    fillColor: Color(0xFFE9E8E8),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                      borderSide:
+                          BorderSide(color: Colors.transparent, width: 1),
                     ),
-                  onChanged: onSearchTextChanged
-                  ,
-                )
-            )
-        )
-    );
-  }
-
-  onSearchTextChanged(String text) async{
-    if(text.isEmpty){
-      setState(() {
-        Toast.show('Ini kosong', context, duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
-      //   Fluttertoast.showToast(
-      //       msg: 'This is toast notification',
-      //       toastLength: Toast.LENGTH_SHORT,
-      //       gravity: ToastGravity.BOTTOM,
-      //       timeInSecForIos: 1,
-      //       backgroundColor: Colors.red,
-      //       textColor: Colors.yellow
-      //   );
-        return;
-      });
-    } else{
-      Toast.show('$text', context, duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
-    }
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                      borderSide:
+                          BorderSide(color: Colors.transparent, width: 1),
+                    ),
+                  ),
+                  onChanged: (txt) {
+                    print("$txt");
+                  },
+                ))));
   }
 }

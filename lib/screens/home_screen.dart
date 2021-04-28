@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
+import 'package:pustaka_app/screens/antrian_menu_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/widget/pustaka_artikel_list_item.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            GestureDetector(
+                            InkWell(
                               child: Container(
                                  child: PustakaIconMenu(
                                     images: 'assets/menu/puskesmas.svg',
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             ),
 
-                            GestureDetector(
+                            InkWell(
                               child: Container(
                                  child: PustakaIconMenu(
                                    images: 'assets/menu/lihatantrian.svg',
@@ -62,11 +63,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                  ),
                               ),
                               onTap: (){
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Lihat Antrian')));
+                                Navigator.of(context).pushNamed(AntrianMenu.id);
                               },
                             ),
 
-                            GestureDetector(
+                            InkWell(
                               child: Container(
                                 child:    PustakaIconMenu(
                                   images: 'assets/menu/daftarantri.svg',

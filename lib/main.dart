@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pustaka_app/const.dart';
+import 'package:pustaka_app/screens/antrian_menu_screen.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_peta.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
             PuskesmasMenuScreen.id : (context) => PuskesmasMenuScreen(),
             PuskesmasPeta.id : (context) => PuskesmasPeta(),
             PuskesmasSearch.id : (context) => PuskesmasSearch(),
+            AntrianMenu.id : (context) => AntrianMenu(),
           }
       ),
     );
