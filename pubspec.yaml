@@ -34,6 +34,8 @@ dependencies:
   shimmer: ^2.0.0
   url_launcher: ^6.0.3
   google_maps_flutter: ^2.0.3
+  # add this line to your dependencies
+  toast: ^0.1.5
 
 dev_dependencies:
   flutter_test:
