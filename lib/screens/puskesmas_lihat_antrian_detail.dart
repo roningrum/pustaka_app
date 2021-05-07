@@ -35,19 +35,31 @@ class PuskesmasAntrianDetail extends StatelessWidget {
                 style: kPustakaBlackRegular.copyWith(fontSize: 13)),
           ),
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text('Loket',
-                style: kPustakaBlackBoldMedium.copyWith(fontSize: 15)),
-            Row(
-              children: [
-                PuskesmasAntrianItem(),
-                PuskesmasAntrianItem(),
-              ],
-            )
-          ],
+        Container(
+          margin: EdgeInsets.only(top: 16, left: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Loket',
+                  style: kPustakaBlackBoldMedium.copyWith(fontSize: 15)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  PuskesmasAntrianItem(),
+                  PuskesmasAntrianItem(),
+                ],
+              ),
+              Text('Poli',
+                  style: kPustakaBlackBoldMedium.copyWith(fontSize: 15)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  PuskesmasAntrianItem(),
+                  PuskesmasAntrianItem(),
+                ],
+              )
+            ],
+          ),
         )
       ]),
     );
