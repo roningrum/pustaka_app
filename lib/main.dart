@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_lihat_antrian.dart';
@@ -14,13 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-      ),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
+    return MaterialApp(
           title: 'Pustaka App',
           theme: ThemeData(
             primaryColor: kPrimaryColor
@@ -33,7 +26,6 @@ class MyApp extends StatelessWidget {
             PuskesmasSearch.id : (context) => PuskesmasSearch(),
             PuskesmasLihatAntrian.id : (context) => PuskesmasLihatAntrian(),
           }
-      ),
     );
     return MaterialApp(
       title: 'Pustaka App',

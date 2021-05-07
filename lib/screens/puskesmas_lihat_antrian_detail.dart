@@ -12,56 +12,58 @@ class PuskesmasAntrianDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kSurfaceColor,
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_rounded,
-            color: kFontColor,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: kSurfaceColor,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_rounded,
+              color: kFontColor,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushNamed(PuskesmasLihatAntrian.id);
+            },
           ),
-          onPressed: () {
-            Navigator.of(context).pushNamed(PuskesmasLihatAntrian.id);
-          },
+          title: Text('Status Antrian',
+              style: kPustakaBlackBoldMedium.copyWith(fontSize: 19)),
         ),
-        title: Text('Status Antrian',
-            style: kPustakaBlackBoldMedium.copyWith(fontSize: 19)),
+        body: Column(children: [
+          Container(
+            margin: EdgeInsets.only(top: 16),
+            child: Center(
+              child: Text("Status Antrian Puskesmas ${puskesmas.nama}",
+                  style: kPustakaBlackRegular.copyWith(fontSize: 13)),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 16, left: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Loket',
+                    style: kPustakaBlackBoldMedium.copyWith(fontSize: 15)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    PuskesmasAntrianItem(),
+                    PuskesmasAntrianItem(),
+                  ],
+                ),
+                Text('Poli',
+                    style: kPustakaBlackBoldMedium.copyWith(fontSize: 15)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    PuskesmasAntrianItem(),
+                    PuskesmasAntrianItem(),
+                  ],
+                )
+              ],
+            ),
+          )
+        ]),
       ),
-      body: Column(children: [
-        Container(
-          margin: EdgeInsets.only(top: 16),
-          child: Center(
-            child: Text("Status Antrian Puskesmas ${puskesmas.nama}",
-                style: kPustakaBlackRegular.copyWith(fontSize: 13)),
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 16, left: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Loket',
-                  style: kPustakaBlackBoldMedium.copyWith(fontSize: 15)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  PuskesmasAntrianItem(),
-                  PuskesmasAntrianItem(),
-                ],
-              ),
-              Text('Poli',
-                  style: kPustakaBlackBoldMedium.copyWith(fontSize: 15)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  PuskesmasAntrianItem(),
-                  PuskesmasAntrianItem(),
-                ],
-              )
-            ],
-          ),
-        )
-      ]),
     );
   }
 }

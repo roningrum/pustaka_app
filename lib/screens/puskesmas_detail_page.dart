@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
-import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/widget/puskesmas_info_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 

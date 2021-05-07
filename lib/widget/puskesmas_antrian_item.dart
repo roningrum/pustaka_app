@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 
 class PuskesmasAntrianItem extends StatelessWidget {
-  const PuskesmasAntrianItem({Key key}) : super(key: key);
+  final String nama_loket;
+  final String nomor_loket;
+  const PuskesmasAntrianItem({Key key, this.nama_loket, this.nomor_loket}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pustaka_app/data/puskesmas.dart';
 
 import '../const.dart';
 

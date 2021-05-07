@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
-import 'package:pustaka_app/widget/pustaka_artikel_list_item.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
 
 class HomeScreen extends StatefulWidget {
