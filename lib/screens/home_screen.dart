@@ -5,6 +5,8 @@ import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
 
+import 'asah_otak/asah_otak.dart';
+
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
 
@@ -87,13 +89,23 @@ class _HomeScreenState extends State<HomeScreen> {
                               images: 'assets/menu/riwayat.svg',
                               title: "Riwayat\nKunjungan",
                             ),
-                            PustakaIconMenu(
-                              images: 'assets/menu/butawarna.svg',
-                              title: "Test Buta\nWarna",
+                            InkWell(
+                              child: PustakaIconMenu(
+                                images: 'assets/menu/butawarna.svg',
+                                title: "Test Buta\nWarna",
+                              ),
+                              onTap: (){
+                                Navigator.of(context).pushNamed(PuskesmasDaftarAntrian.id);
+                              },
                             ),
-                            PustakaIconMenu(
-                              images: 'assets/menu/asahotak.svg',
-                              title: "Asah Otak",
+                            InkWell(
+                              child: PustakaIconMenu(
+                                images: 'assets/menu/asahotak.svg',
+                                title: "Asah Otak",
+                              ),
+                              onTap: (){
+                                Navigator.of(context).pushNamed(AsahOtak.id);
+                              },
                             ),
                           ],
                         ),
