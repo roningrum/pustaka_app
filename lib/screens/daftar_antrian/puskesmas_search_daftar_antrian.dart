@@ -16,7 +16,6 @@ class PuskesmasSearchDaftarAntrian extends StatefulWidget {
 }
 
 class _PuskesmasSearchDaftarAntrianState extends State<PuskesmasSearchDaftarAntrian> {
-  bool _loading;
   List<Puskesmas> sarkesList = [];
   List<Puskesmas> _searchResult = [];
 
