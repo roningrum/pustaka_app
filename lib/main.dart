@@ -3,9 +3,9 @@ import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_antrian.dart';
 import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
-import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
-import 'package:pustaka_app/screens/puskesmas_peta.dart';
-import 'package:pustaka_app/screens/puskesmas_search.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_menu_screen.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_peta.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_search.dart';
 
 void main() {
   runApp(MyApp());

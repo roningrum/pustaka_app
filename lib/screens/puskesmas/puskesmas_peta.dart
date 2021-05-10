@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
 
-import '../const.dart';
+import '../../const.dart';
 
 class PuskesmasPeta extends StatefulWidget {
   static String id = "puskesmas_peta_menu";

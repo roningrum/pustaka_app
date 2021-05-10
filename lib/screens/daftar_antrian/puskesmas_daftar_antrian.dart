@@ -72,8 +72,8 @@ class _PuskesmasDaftarAntrianState extends State<PuskesmasDaftarAntrian> {
               },
             )
           ],
-          title: Text('Daftar Antrian',
-              style: kPustakaBlackBoldMedium.copyWith(fontSize: 19)),
+          title: Text('Daftar Antri',
+              style: kPustakaBlackRegular.copyWith(fontSize: 19)),
         ),
         body: _loading
             ? LoadingPuskesmas()

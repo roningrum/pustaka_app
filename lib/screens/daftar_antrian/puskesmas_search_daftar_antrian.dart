@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_identitas.dart';
-import 'package:pustaka_app/screens/puskesmas_detail_page.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_detail_page.dart';
 import 'package:pustaka_app/widget/puskesmas_antri_list.dart';
 import 'package:pustaka_app/widget/puskesmas_item_list.dart';
 

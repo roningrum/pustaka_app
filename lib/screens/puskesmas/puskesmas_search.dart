@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
-import 'package:pustaka_app/screens/puskesmas_detail_page.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_detail_page.dart';
 import 'package:pustaka_app/widget/puskesmas_item_list.dart';
 
-import '../const.dart';
+import '../../const.dart';
 
 class PuskesmasSearch extends StatefulWidget {
   static String id = "puskesmas_search";
@@ -14,7 +14,6 @@ class PuskesmasSearch extends StatefulWidget {
 }
 
 class _PuskesmasSearchState extends State<PuskesmasSearch> {
-  bool _loading;
   List<Puskesmas> sarkesList = [];
   List<Puskesmas> _searchResult = [];
 

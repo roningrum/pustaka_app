@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
 import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian_detail.dart';
-import 'package:pustaka_app/screens/puskesmas_search.dart';
+import 'package:pustaka_app/screens/lihat_antrian/pusksesmas_search_lihat_antrian.dart';
 import 'package:pustaka_app/widget/loading_puskesmas_widget.dart';
 import 'package:pustaka_app/widget/puskesmas_antri_list.dart';
 
@@ -68,7 +68,7 @@ class _PuskesmasLihatAntrianState extends State<PuskesmasLihatAntrian> {
             IconButton(
               icon: Icon(Icons.search_outlined, color: kFontColor),
               onPressed: () {
-                Navigator.of(context).pushNamed(PuskesmasSearch.id);
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => PuskesmasSearchLihatAntrian()));
               },
             )
           ],

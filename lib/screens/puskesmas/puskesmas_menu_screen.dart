@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
-import 'package:pustaka_app/screens/puskesmas_detail_page.dart';
-import 'package:pustaka_app/screens/puskesmas_peta.dart';
-import 'package:pustaka_app/screens/puskesmas_search.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_detail_page.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_peta.dart';
+import 'package:pustaka_app/screens/puskesmas/puskesmas_search.dart';
 import 'package:pustaka_app/widget/loading_puskesmas_widget.dart';
 import 'package:pustaka_app/widget/puskesmas_item_list.dart';
-import '../const.dart';
-import 'home_screen.dart';
+import '../../const.dart';
+import '../home_screen.dart';
 
 class PuskesmasMenuScreen extends StatefulWidget {
   static String id = "puskesmas_menu";
@@ -77,7 +77,7 @@ class _PuskesmasMenuScreenState extends State<PuskesmasMenuScreen> {
             ),
           ],
           title: Text('Puskesmas',
-              style: kPustakaBlackBoldMedium.copyWith(fontSize: 19)),
+              style: kPustakaBlackRegular.copyWith(fontSize: 19)),
         ),
         body: _loading
             ? LoadingPuskesmas()

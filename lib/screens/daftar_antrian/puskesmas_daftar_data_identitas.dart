@@ -1,7 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
+import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_pasien_baru.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_konfirmasi_antrian.dart';
 
 class DaftarDataIdentitas extends StatefulWidget {
@@ -57,7 +57,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                 ),
               ),
               Container(
-                width: 328,
+                width: MediaQuery.of(context).size.width,
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(
@@ -78,7 +78,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                 ),
               ),
               Container(
-                width: 328,
+                width: MediaQuery.of(context).size.width,
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(
@@ -101,11 +101,16 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
               Container(
                 margin: EdgeInsets.only(top: 2, left: 16, right: 16),
                 alignment: Alignment.topLeft,
-                child: Text('Klik di sini untuk daftar pasien baru',
-                    style: kPustakaGreenRegular.copyWith(fontSize: 13)),
+                child: InkWell(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => DaftarPasienBaru(puskesmasNama: widget.puskesmas.nama,)));
+                  },
+                  child: Text('Klik di sini untuk daftar pasien baru',
+                      style: kPustakaGreenRegular.copyWith(fontSize: 13)),
+                ),
               ),
               Container(
-                width: 328,
+                width: MediaQuery.of(context).size.width,
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(
@@ -125,7 +130,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                 ),
               ),
               Container(
-                width: 328,
+                width: MediaQuery.of(context).size.width,
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(
@@ -150,7 +155,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
 
               ),
               Container(
-                width: 328,
+                width: MediaQuery.of(context).size.width,
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(

@@ -47,7 +47,7 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
               ),
             ),
             Container(
-              width: 328,
+              width: MediaQuery.of(context).size.width,
               height: 56,
               margin: EdgeInsets.only(top: 16, left: 16, right: 16),
               child: TextField(
