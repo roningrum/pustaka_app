@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
-import 'package:pustaka_app/screens/puskesmas_lihat_antrian_detail.dart';
+import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian_detail.dart';
 import 'package:pustaka_app/screens/puskesmas_search.dart';
 import 'package:pustaka_app/widget/loading_puskesmas_widget.dart';
 import 'package:pustaka_app/widget/puskesmas_antri_list.dart';
 
-import '../const.dart';
-import 'home_screen.dart';
+import '../../const.dart';
+import '../home_screen.dart';
 
 class PuskesmasLihatAntrian extends StatefulWidget {
   static String id = 'Puskesmas Lihat Antrian';

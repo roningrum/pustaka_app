@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_antrian.dart';
-import 'package:pustaka_app/screens/puskesmas_lihat_antrian.dart';
+import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_peta.dart';
 import 'package:pustaka_app/screens/puskesmas_search.dart';
@@ -33,13 +33,5 @@ class MyApp extends StatelessWidget {
           PuskesmasLihatAntrian.id: (context) => PuskesmasLihatAntrian(),
           PuskesmasDaftarAntrian.id: (context) => PuskesmasDaftarAntrian(),
         });
-    return MaterialApp(
-      title: 'Pustaka App',
-      initialRoute: HomeScreen.id,
-      routes: {
-        HomeScreen.id: (context) => HomeScreen(),
-        PuskesmasMenuScreen.id: (context) => PuskesmasMenuScreen()
-      },
-    );
   }
 }

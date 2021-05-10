@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:pustaka_app/helper/puskesmas_list.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_identitas.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_search_daftar_antrian.dart';
-import 'package:pustaka_app/screens/puskesmas_lihat_antrian_detail.dart';
-import 'package:pustaka_app/screens/puskesmas_search.dart';
 import 'package:pustaka_app/widget/loading_puskesmas_widget.dart';
 import 'package:pustaka_app/widget/puskesmas_antri_list.dart';
 
@@ -74,7 +72,7 @@ class _PuskesmasDaftarAntrianState extends State<PuskesmasDaftarAntrian> {
               },
             )
           ],
-          title: Text('Lihat Antrian',
+          title: Text('Daftar Antrian',
               style: kPustakaBlackBoldMedium.copyWith(fontSize: 19)),
         ),
         body: _loading

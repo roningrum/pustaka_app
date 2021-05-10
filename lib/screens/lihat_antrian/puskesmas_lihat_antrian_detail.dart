@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
-import 'package:pustaka_app/screens/puskesmas_lihat_antrian.dart';
+import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/widget/puskesmas_antrian_item.dart';
 import 'package:http/http.dart' as http;
-import '../const.dart';
 
 class PuskesmasAntrianDetail extends StatefulWidget {
   final Puskesmas puskesmas;
