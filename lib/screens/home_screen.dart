@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
-import 'package:pustaka_app/screens/puskesmas_daftar_data_identitas.dart';
+import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_antrian.dart';
+import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_identitas.dart';
 import 'package:pustaka_app/screens/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
@@ -74,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) =>DaftarDataIdentitas()));
+                                Navigator.of(context).pushNamed(PuskesmasDaftarAntrian.id);
                               },
                             ),
                           ],

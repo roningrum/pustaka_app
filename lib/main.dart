@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/home_screen.dart';
+import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/screens/puskesmas_peta.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           PuskesmasPeta.id: (context) => PuskesmasPeta(),
           PuskesmasSearch.id: (context) => PuskesmasSearch(),
           PuskesmasLihatAntrian.id: (context) => PuskesmasLihatAntrian(),
+          PuskesmasDaftarAntrian.id: (context) => PuskesmasDaftarAntrian(),
         });
     return MaterialApp(
       title: 'Pustaka App',

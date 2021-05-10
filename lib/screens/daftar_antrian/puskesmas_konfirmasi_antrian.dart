@@ -51,6 +51,10 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
               height: 56,
               margin: EdgeInsets.only(top: 16, left: 16, right: 16),
               child: TextField(
+                  readOnly: true,
+                onTap: (){
+                  showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(1900), lastDate: DateTime(2200));
+                },
                 decoration: InputDecoration(
                     fillColor: Color(0xFFE9E8E8),
                     filled: true,
@@ -111,7 +115,7 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
               ],
             ),
             Container(
-              margin: EdgeInsets.only(top: 24, left: 16),
+              margin: EdgeInsets.only(top: 32, left: 16, bottom: 8),
               child: Text(
                 'Konfirmasi Pembayaran',
                 style: kPustakaBlackRegular.copyWith(fontSize: 13),
@@ -123,92 +127,103 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
                   padding: EdgeInsets.all(4),
                   margin: EdgeInsets.symmetric(horizontal: 16.0),
                   decoration: BoxDecoration(
-                    border: Border.all(
-                      color:  Color(0xFFE9E8E8),
-                    ), 
-                    borderRadius: BorderRadius.circular(4)
-                  ),
-                  child: RadioListTile(
-                    activeColor: kPrimaryColor,
-                      value: Pembayaran.BPJS,
-                      groupValue: _jenisPembayaran,
-                      onChanged:(Pembayaran value){
-                        setState(() {
-                          _jenisPembayaran = value;
-                          print('$_jenisPembayaran');
-                        });
-                      },
-                  title: RichText(
-                    text: TextSpan(
-                      children: [
-                        WidgetSpan(
-                          child: Container(
-                              margin: EdgeInsets.only(right: 12),
-                              child: SvgPicture.asset('assets/menu/bpjslogo.svg'))
-                        ),
-                        TextSpan(
-                           text: "BPJS", style: kPustakaBlackBoldMedium.copyWith(
-                            fontSize: 14
-                        ))
-                      ],
-                    ),
-                  ),),
-                ),
-                Container(
-                  padding: EdgeInsets.all(4),
-                  margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-                  decoration: BoxDecoration(
                       border: Border.all(
-                        color:  Color(0xFFE9E8E8),
+                        color: Color(0xFFE9E8E8),
                       ),
-                      borderRadius: BorderRadius.circular(4)
-                  ),
+                      borderRadius: BorderRadius.circular(4)),
                   child: RadioListTile(
                     activeColor: kPrimaryColor,
-                      value: Pembayaran.Umum,
-                      groupValue: _jenisPembayaran,
-                      onChanged:(Pembayaran value){
-                        setState(() {
-                          _jenisPembayaran = value;
-                          print('$_jenisPembayaran');
-                        });
-                      },
-                  title: RichText(
+                    value: Pembayaran.BPJS,
+                    groupValue: _jenisPembayaran,
+                    onChanged: (Pembayaran value) {
+                      setState(() {
+                        _jenisPembayaran = value;
+                        print('$_jenisPembayaran');
+                      });
+                    },
+                    title: RichText(
                       text: TextSpan(
                         children: [
                           WidgetSpan(
-                            child: Container(
-                              margin: EdgeInsets.only(right: 12),
-                              child: Icon(
-                                  Icons.account_balance_wallet_rounded,
-                                      color: Color(0xFFA9A9A9)),
-                            )
-                          ),
-                          TextSpan(
-                             text: "Umum", style: kPustakaBlackBoldMedium.copyWith(
-                            fontSize: 14
-                          ))
+                              child: Container(
+                                  child: SvgPicture.asset(
+                                      'assets/menu/bpjslogo.svg'))),
+                          WidgetSpan(
+                              child: Container(
+                                margin: EdgeInsets.only(left: 12),
+                                child: Text(
+                                  "BPJS",
+                                  style: kPustakaBlackBoldMedium.copyWith(
+                                      fontSize: 15),
+                                ),
+                              )),
                         ],
                       ),
                     ),
-                  ),),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(4),
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Color(0xFFE9E8E8),
+                      ),
+                      borderRadius: BorderRadius.circular(4)),
+                  child: RadioListTile(
+                    activeColor: kPrimaryColor,
+                    value: Pembayaran.Umum,
+                    groupValue: _jenisPembayaran,
+                    onChanged: (Pembayaran value) {
+                      setState(() {
+                        _jenisPembayaran = value;
+                        print('$_jenisPembayaran');
+                      });
+                    },
+                    title: Container(
+                      padding: EdgeInsets.all(4),
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            WidgetSpan(
+                                child: Container(
+                              child: Icon(Icons.account_balance_wallet_rounded,
+                                  color: Color(0xFFA9A9A9)),
+                            )),
+                            WidgetSpan(
+                                child: Container(
+                              margin: EdgeInsets.only(left: 12),
+                              child: Text(
+                                "Umum",
+                                style: kPustakaBlackBoldMedium.copyWith(
+                                    fontSize: 15),
+                              ),
+                            )),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 Container(
                   width: 178,
                   height: 56,
                   margin: EdgeInsets.only(top: 24),
                   child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) =>KonfirmasiAntrian()));
-                      },
+                      onPressed: () {},
                       child: Text(
                         "Daftar",
                         style: kPustakaWhiteNormal.copyWith(fontSize: 16),
                       ),
                       style: ButtonStyle(
-                          padding: MaterialStateProperty.all(EdgeInsets.all(16)),
-                          backgroundColor: MaterialStateProperty.all(kPrimaryColor),
-                          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4))))),
+                          padding:
+                              MaterialStateProperty.all(EdgeInsets.all(16)),
+                          backgroundColor:
+                              MaterialStateProperty.all(kPrimaryColor),
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4))))),
                 ),
               ],
             )

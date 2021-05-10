@@ -1,10 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
-import 'package:pustaka_app/screens/puskesmas_konfirmasi_antrian.dart';
+import 'package:pustaka_app/data/puskesmas.dart';
+import 'package:pustaka_app/screens/daftar_antrian/puskesmas_konfirmasi_antrian.dart';
 
 class DaftarDataIdentitas extends StatefulWidget {
-  const DaftarDataIdentitas({Key key}) : super(key: key);
+  final Puskesmas puskesmas;
+  const DaftarDataIdentitas({Key key, this.puskesmas}) : super(key: key);
 
   @override
   _DaftarDataIdentitasState createState() => _DaftarDataIdentitasState();
@@ -41,7 +43,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
               Container(
                 margin: EdgeInsets.only(top: 8),
                 child: Text(
-                  'Pendaftaran Online Puskesmas',
+                  'Pendaftaran Online ${widget.puskesmas.nama}',
                   style: kPustakaBlackRegular.copyWith(fontSize: 13),
                   textAlign: TextAlign.center,
                 ),
@@ -59,6 +61,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       fillColor: Color(0xFFE9E8E8),
                       filled: true,
@@ -79,6 +82,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       fillColor: Color(0xFFE9E8E8),
                       filled: true,
@@ -125,6 +129,10 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                 height: 56,
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: TextField(
+                  readOnly: true,
+                    onTap:(){
+                      showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(1900), lastDate: DateTime(2200));
+                    },
                   decoration: InputDecoration(
                       fillColor: Color(0xFFE9E8E8),
                       filled: true,
@@ -139,6 +147,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent))),
                 ),
+
               ),
               Container(
                 width: 328,
