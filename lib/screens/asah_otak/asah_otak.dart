@@ -56,13 +56,13 @@ class _AsahOtakState extends State<AsahOtak> {
           ),
           Container(
             alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(left: 16.0, top: 8),
+            margin: EdgeInsets.only(left: 24, top: 8),
             child: Text("Ayo main permainan puzzle", style: kPustakaBlackRegular.copyWith(fontSize: 13),),
           ),
           Container(
             width: 178,
             height: 56,
-            margin: EdgeInsets.only(top: 8),
+            margin: EdgeInsets.only(top: 16),
             child: ElevatedButton.icon(
               onPressed: (){},
               style: ButtonStyle(backgroundColor: MaterialStateProperty.all(kPrimaryColor)),
