@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
+import 'package:pustaka_app/data/antrian.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
 import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/widget/puskesmas_antrian_item.dart';
@@ -9,6 +10,7 @@ import 'package:http/http.dart' as http;
 
 class PuskesmasAntrianDetail extends StatefulWidget {
   final Puskesmas puskesmas;
+
   const PuskesmasAntrianDetail({Key key, this.puskesmas}) : super(key: key);
 
   @override
@@ -20,8 +22,9 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
   Future<void> getAntrian() async{
     var url = Uri.parse("${widget.puskesmas.antrian}");
     var response = await http.get(url);
-    Map jsonData = jsonDecode(response.body);
-    print(jsonData);
+    Map<String, dynamic> dataMap = jsonDecode(response.body.toString());
+    var data = Antrian.fromJson(dataMap);
+    print(data);
   }
 
   void getAntrianPuskesmas(){
