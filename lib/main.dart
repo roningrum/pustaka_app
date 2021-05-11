@@ -7,6 +7,8 @@ import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_peta.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_search.dart';
+import 'package:pustaka_app/screens/riwayat_antri.dart';
+import 'package:pustaka_app/screens/test_buta_warna/pustaka_buta_warna.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +35,9 @@ class MyApp extends StatelessWidget {
           PuskesmasSearch.id: (context) => PuskesmasSearch(),
           PuskesmasLihatAntrian.id: (context) => PuskesmasLihatAntrian(),
           PuskesmasDaftarAntrian.id: (context) => PuskesmasDaftarAntrian(),
-          AsahOtak.id : (context) => AsahOtak()
+          AsahOtak.id : (context) => AsahOtak(),
+          PustakaButaWarna.id: (context) => PustakaButaWarna(),
+          RiwayatKunjunganPuskesmas.id : (context) => RiwayatKunjunganPuskesmas()
         });
   }
 }

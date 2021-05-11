@@ -3,6 +3,8 @@ import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_antrian.dart';
 import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_menu_screen.dart';
+import 'package:pustaka_app/screens/riwayat_antri.dart';
+import 'package:pustaka_app/screens/test_buta_warna/pustaka_buta_warna.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
 
 import 'asah_otak/asah_otak.dart';
@@ -85,9 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            PustakaIconMenu(
-                              images: 'assets/menu/riwayat.svg',
-                              title: "Riwayat\nKunjungan",
+                            InkWell(
+                              child: PustakaIconMenu(
+                                images: 'assets/menu/riwayat.svg',
+                                title: "Riwayat\nKunjungan",
+                              ),
+                              onTap: (){
+                                Navigator.of(context).pushNamed(RiwayatKunjunganPuskesmas.id);
+                              },
                             ),
                             InkWell(
                               child: PustakaIconMenu(
@@ -95,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 title: "Test Buta\nWarna",
                               ),
                               onTap: (){
-                                Navigator.of(context).pushNamed(PuskesmasDaftarAntrian.id);
+                                Navigator.of(context).pushNamed(PustakaButaWarna.id);
                               },
                             ),
                             InkWell(

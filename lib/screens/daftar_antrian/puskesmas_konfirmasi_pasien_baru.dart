@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pustaka_app/const.dart';
 
 class KonfirmasiPasienBaru extends StatefulWidget {
@@ -169,7 +170,7 @@ class _KonfirmasiPasienBaruState extends State<KonfirmasiPasienBaru> {
                 decoration: InputDecoration(
                     fillColor: Color(0xFFE9E8E8),
                     filled: true,
-                    prefixIcon: Icon(Icons.healing),
+                    prefixIcon: SvgPicture.asset('assets/menu/bloodtype_black_24dp.svg', color: Color(0xFFA9A9A9),),
                     hintText: "Golongan Darah",
                     hintStyle: kPustakaBlackRegular.copyWith(
                         fontSize: 15,
