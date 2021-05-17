@@ -1,6 +1,10 @@
+
+
+import 'package:flutter/foundation.dart';
+
 class Antrian {
-  String loketA;
-  String loketB;
+  final String loketA;
+  final String loketB;
   // String loketC;
   // String loketV;
   // String umum;
@@ -19,9 +23,9 @@ class Antrian {
   // String febris;
   // String konselingGizi;
 
-  Antrian(
-      this.loketA,
-      this.loketB);
+  Antrian({
+      @required this.loketA,
+      @required this.loketB});
       // this.loketC,
       // this.loketV,
       // this.umum,
@@ -40,13 +44,11 @@ class Antrian {
       // this.febris,
       // this.konselingGizi);
 
-  Antrian.fromJson(Map<String, dynamic> json)
-      : loketA = json['Loket A'],
-        loketB = json['Loket B'];
-
-  Map<String, dynamic> toJson() =>{
-    'Loket A' : loketA,
-    'Loket B' : loketB
-  };
+  factory Antrian.fromJson(Map<String, dynamic> json){
+    return Antrian(
+      loketA : json['Loket A'],
+      loketB: json['Loket B']
+    );
+  }
 
 }

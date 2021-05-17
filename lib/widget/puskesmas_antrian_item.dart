@@ -22,15 +22,15 @@ class PuskesmasAntrianItem extends StatelessWidget {
               children: [
                 Container(
                   child: Text(
-                    'Loket A',
+                    nama_loket,
                     style: kPustakaGreenRegular.copyWith(fontSize: 13),
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 8),
                   child: Text(
-                    'A5',
-                    style: kPustakaGreenRegular.copyWith(fontSize: 23),
+                    nomor_loket,
+                    style: kPustakaGreenRegular.copyWith(fontSize: 10),
                   ),
                 ),
               ],),

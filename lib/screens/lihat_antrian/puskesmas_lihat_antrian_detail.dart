@@ -8,10 +8,13 @@ import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/widget/puskesmas_antrian_item.dart';
 import 'package:http/http.dart' as http;
 
+
+
 class PuskesmasAntrianDetail extends StatefulWidget {
   final Puskesmas puskesmas;
 
   const PuskesmasAntrianDetail({Key key, this.puskesmas}) : super(key: key);
+
 
   @override
   _PuskesmasAntrianDetailState createState() => _PuskesmasAntrianDetailState();
@@ -19,23 +22,20 @@ class PuskesmasAntrianDetail extends StatefulWidget {
 
 class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
 
-  Future<void> getAntrian() async{
-    var url = Uri.parse("${widget.puskesmas.antrian}");
+  Future<Antrian> getAntrian() async{
+    var url = Uri.parse(widget.puskesmas.antrian);
     var response = await http.get(url);
-    Map<String, dynamic> dataMap = jsonDecode(response.body.toString());
-    var data = Antrian.fromJson(dataMap);
-    print(data);
+    var jsonData = jsonDecode(response.body);
+    return Antrian.fromJson(jsonData['antrian']);
   }
 
-  void getAntrianPuskesmas(){
-    getAntrian();
-  }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getAntrianPuskesmas();
+    getAntrian();
+
   }
 
   @override
@@ -74,8 +74,13 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    PuskesmasAntrianItem(),
-                    PuskesmasAntrianItem(),
+                    FutureBuilder(future: getAntrian(),builder: (context, snapshot){
+                      if(snapshot.hasData){
+                        print(snapshot.data.loketA);
+                        return  PuskesmasAntrianItem(nama_loket: "Loket A", nomor_loket: snapshot.data.loketA);}
+                    return Container(width: 0.0, height: 0.0,);
+                    })
+
                   ],
                 ),
                 Text('Poli',
@@ -83,8 +88,6 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    PuskesmasAntrianItem(),
-                    PuskesmasAntrianItem(),
                   ],
                 )
               ],
