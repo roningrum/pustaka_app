@@ -77,25 +77,28 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
                                 print(snapshot.data.loketA);
                                 return  PuskesmasAntrianItem(nama_loket: "Loket A", nomor_loket: snapshot.data.loketA);}
-                              return Container(width: 84, height: 84, margin: EdgeInsets.all(16),color: Colors.black26);
+                              return LoadingWidget();
                             }),
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
                                 print(snapshot.data.loketB);
                                 return  PuskesmasAntrianItem(nama_loket: "Loket B", nomor_loket: snapshot.data.loketB);}
-                              return Container(width: 84, height: 84, margin: EdgeInsets.all(16),color: Colors.black26);
+                              return LoadingWidget();
                             }),
                           ],
                         ),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            FutureBuilder(future: getAntrian(),builder: (context, snapshot){
+                            FutureBuilder(future: getAntrian(  ),builder: (context, snapshot){
                               if(snapshot.hasData){
                                 if(snapshot.data.loketC != null){
                                   return  PuskesmasAntrianItem(nama_loket: "Loket C", nomor_loket: snapshot.data.loketC);
@@ -104,7 +107,7 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, margin: EdgeInsets.all(16),color: Colors.black26);
+                              return LoadingWidget();
                             }),
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -115,11 +118,10 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, margin: EdgeInsets.all(16),color: Colors.black26);
+                              return LoadingWidget();
                             }),
 
                           ],
-
                         ),
 
                       ],
@@ -130,6 +132,7 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -140,7 +143,7 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return  EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -151,13 +154,14 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
 
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -179,13 +183,14 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
 
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -207,13 +212,14 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
 
                       ],
                     ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -235,12 +241,13 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -262,12 +269,13 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -289,13 +297,14 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
                           ],
                         ),
 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             FutureBuilder(future: getAntrian(),builder: (context, snapshot){
                               if(snapshot.hasData){
@@ -317,7 +326,7 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
                                   return EmptyDataWidget();
                                 }
                               }
-                              return Container(width: 84, height: 84, color: Colors.black26);
+                              return LoadingWidget();
                             }),
                           ],
                         ),
@@ -334,6 +343,17 @@ class _PuskesmasAntrianDetailState extends State<PuskesmasAntrianDetail> {
   }
 }
 
+class LoadingWidget extends StatelessWidget {
+  const LoadingWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(width: 84, height: 84, margin: EdgeInsets.all(16),color: Colors.black26);
+  }
+}
+
 class EmptyDataWidget extends StatelessWidget {
   const EmptyDataWidget({
     Key key,
@@ -341,6 +361,6 @@ class EmptyDataWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(width:0.0, height: 0.0, margin: EdgeInsets.all(16));
+    return Container(width:84.0, height: 0.0);
   }
 }
