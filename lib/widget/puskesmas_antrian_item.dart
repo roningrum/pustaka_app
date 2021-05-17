@@ -30,7 +30,7 @@ class PuskesmasAntrianItem extends StatelessWidget {
                   margin: EdgeInsets.only(top: 8),
                   child: Text(
                     nomor_loket,
-                    style: kPustakaGreenRegular.copyWith(fontSize: 10),
+                    style: kPustakaGreenRegular.copyWith(fontSize: 23),
                   ),
                 ),
               ],),
