@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_pasien_baru.dart';
+import 'package:pustaka_app/screens/daftar_antrian/puskesmas_konfirmasi_antrian.dart';
 
 class DaftarDataIdentitas extends StatefulWidget {
   final Puskesmas puskesmas;
@@ -17,10 +18,14 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
   final _formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  String nik;
+  String nik, kartuObat, tglLahir, nama, alamat;
 
 
-  TextEditingController initialDate = TextEditingController();
+  TextEditingController tglLahirPasien = TextEditingController();
+  TextEditingController nikPasien = TextEditingController();
+  TextEditingController kartuObatPasien = TextEditingController();
+  TextEditingController namaPasien = TextEditingController();
+  TextEditingController alamatPasien = TextEditingController();
 
   Future _selectDate() async {
     DateTime picked = await showDatePicker(
@@ -32,14 +37,14 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
     if (picked != null)
       setState(() {
         String date = DateFormat("dd-MM-yyyy").format(picked);
-        initialDate.text = date;
+        tglLahirPasien.text = date;
       });
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    initialDate.dispose();
+    tglLahirPasien.dispose();
     super.dispose();
   }
 
@@ -99,6 +104,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                       child: TextFormField(
+                        controller: nikPasien,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "Tolong isi NIK";
@@ -141,6 +147,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                           return null;
                         },
                         keyboardType: TextInputType.number,
+                        controller: kartuObatPasien,
                         decoration: InputDecoration(
                             fillColor: Color(0xFFE9E8E8),
                             filled: true,
@@ -176,6 +183,8 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       height: 56,
                       margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                       child: TextFormField(
+                        keyboardType: TextInputType.name,
+                        controller: namaPasien,
                         decoration: InputDecoration(
                             fillColor: Color(0xFFE9E8E8),
                             filled: true,
@@ -196,7 +205,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                       child: TextFormField(
-                        controller: initialDate,
+                        controller: tglLahirPasien,
                         readOnly: true,
                         onTap: () {
                           _selectDate();
@@ -222,6 +231,8 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                       child: TextField(
+                        controller: alamatPasien,
+                        keyboardType: TextInputType.streetAddress,
                         decoration: InputDecoration(
                             fillColor: Color(0xFFE9E8E8),
                             filled: true,
@@ -247,10 +258,21 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                               if (_formKey.currentState.validate()) {
                                 // If the form is valid, display a snackbar. In the real world,
                                 // you'd often call a server or save the information in a database.
-                                scaffoldKey.currentState
-                                    // ignore: deprecated_member_use
-                                    .showSnackBar(SnackBar(
-                                        content: Text('Processing Data')));
+                                // scaffoldKey.currentState
+                                //     // ignore: deprecated_member_use
+                                //     .showSnackBar(SnackBar(
+                                //         content: Text('Processing Data')));
+                                tglLahir = tglLahirPasien.text;
+                                nama = namaPasien.text;
+                                alamat = alamatPasien.text;
+                                kartuObat = kartuObatPasien.text;
+                                nik = nikPasien.text;
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => KonfirmasiAntrian()),
+                                );
+                                print("data pasien daftar $tglLahir, $nama, $alamat, $kartuObat, $nik");
                               }
                             });
                             // Validate returns true if the form is valid, or false otherwise
