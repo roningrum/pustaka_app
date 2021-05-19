@@ -34,6 +34,13 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    initialDate.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
