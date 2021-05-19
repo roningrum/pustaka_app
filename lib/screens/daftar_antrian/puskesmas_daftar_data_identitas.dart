@@ -17,6 +17,9 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
   final _formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
+  String nik;
+
+
   TextEditingController initialDate = TextEditingController();
 
   Future _selectDate() async {
