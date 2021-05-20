@@ -182,7 +182,6 @@ class _DaftarPasienBaruState extends State<DaftarPasienBaru> {
             ),
             Container(
               width:  MediaQuery.of(context).size.width,
-              height: 56,
               margin: EdgeInsets.only(top: 16, left: 16, right: 16),
               child: TextField(
                 decoration: InputDecoration(
@@ -215,7 +214,6 @@ class _DaftarPasienBaruState extends State<DaftarPasienBaru> {
                 }),
             Container(
               width:  MediaQuery.of(context).size.width,
-              height: 56,
               margin: EdgeInsets.only(top: 8, left: 16, right: 16),
               child: TextField(
                 decoration: InputDecoration(

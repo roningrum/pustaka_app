@@ -10,4 +10,5 @@ class SuccessMessage{
     return SuccessMessage(success: json['success'], message: json['message']);
   }
 
+
 }

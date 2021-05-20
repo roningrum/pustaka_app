@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
+import 'package:pustaka_app/data/success_message.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_pasien_baru.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_konfirmasi_antrian.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DaftarDataIdentitas extends StatefulWidget {
   final Puskesmas puskesmas;
@@ -19,13 +22,17 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
   String nik, kartuObat, tglLahir, nama, alamat;
+  String nomorPuskesmas;
 
+  SharedPreferences prefs;
 
   TextEditingController tglLahirPasien = TextEditingController();
   TextEditingController nikPasien = TextEditingController();
   TextEditingController kartuObatPasien = TextEditingController();
   TextEditingController namaPasien = TextEditingController();
   TextEditingController alamatPasien = TextEditingController();
+
+
 
   Future _selectDate() async {
     DateTime picked = await showDatePicker(
@@ -39,6 +46,12 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
         String date = DateFormat("dd-MM-yyyy").format(picked);
         tglLahirPasien.text = date;
       });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
@@ -185,6 +198,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       child: TextFormField(
                         keyboardType: TextInputType.name,
                         controller: namaPasien,
+                        maxLengthEnforcement: MaxLengthEnforcement.none,
                         decoration: InputDecoration(
                             fillColor: Color(0xFFE9E8E8),
                             filled: true,
@@ -233,6 +247,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       child: TextField(
                         controller: alamatPasien,
                         keyboardType: TextInputType.streetAddress,
+                        maxLengthEnforcement: MaxLengthEnforcement.none,
                         decoration: InputDecoration(
                             fillColor: Color(0xFFE9E8E8),
                             filled: true,
@@ -267,6 +282,9 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                                 alamat = alamatPasien.text;
                                 kartuObat = kartuObatPasien.text;
                                 nik = nikPasien.text;
+                                nomorPuskesmas = widget.puskesmas.telepon;
+                                print(nomorPuskesmas);
+                                _simpanDataDiri(nik, nama, alamat, kartuObat, tglLahir, nomorPuskesmas);
 
                                 Navigator.push(
                                   context,
@@ -297,4 +315,15 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
           ),
         ));
   }
+  _simpanDataDiri(String nik, String nama, String alamat, String kartuObat, String tglLahir, String nomorPuskesmas) async{
+    prefs = await SharedPreferences.getInstance();
+    prefs.setString('nomorPuskesmas', nomorPuskesmas);
+    prefs.setString('nik', nik);
+    prefs.setString('kartu_obat', kartuObat);
+    prefs.setString('alamat', alamat);
+    prefs.setString('tglLahir', tglLahir);
+    prefs.setString('nama', nama);
+  }
+
+
 }
