@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
-import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_pasien_baru.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_konfirmasi_antrian.dart';
+import 'package:pustaka_app/widget/daftar_kartu_obat_ke_puskesmas.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DaftarDataIdentitas extends StatefulWidget {
@@ -174,19 +174,18 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                       alignment: Alignment.topLeft,
                       child: InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => DaftarPasienBaru(
-                                    puskesmasNama: widget.puskesmas.nama,
-                                  )));
+                         showDialog(context: context, builder: (BuildContext context){
+                           return DaftarKartuObatDialog();
+                         });
                         },
                         child: Text('Klik di sini untuk daftar pasien baru',
-                            style: kPustakaGreenRegular.copyWith(fontSize: 13)),
+                            style: kPustakaGreenRegular.copyWith(fontSize: 12)),
                       ),
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 56,
-                      margin: EdgeInsets.only(top: 16, left: 16, right: 16),
+                      margin: EdgeInsets.only(top: 24, left: 16, right: 16),
                       child: TextFormField(
                         keyboardType: TextInputType.name,
                         controller: namaPasien,
