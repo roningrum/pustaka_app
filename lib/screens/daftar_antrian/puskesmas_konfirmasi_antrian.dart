@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:pustaka_app/const.dart';
-import 'package:pustaka_app/data/success_message.dart';
 import 'package:pustaka_app/widget/custom_dialog_box.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:http/http.dart' as http;
 
 class KonfirmasiAntrian extends StatefulWidget {
   @override
@@ -314,7 +312,8 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
     );
   }
   void _openWhatsapp() async{
-    var text = "$nikPasien # $nomorKartuObat # $namaPasien # $tglLahirPasien # $alamatPasien # $_chosenPoli # $tglPerikssa # $_jenisPembayaran";
+    tglPerikssa = tglPeriksa.text;
+    var text = nikPasien + "%23" + nomorKartuObat + "%23" + namaPasien + "%23" + tglLahirPasien + "%23" + alamatPasien + "%23" + _chosenPoli + "%23" + tglPerikssa + "%23" + _jenisPembayaran;
     var nomor = nomorPuskesmas;
     final urlWA = "http://api.whatsapp.com/send?phone=$nomor&text=$text";
     await launch(urlWA);
