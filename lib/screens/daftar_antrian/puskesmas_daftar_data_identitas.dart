@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
-import 'package:pustaka_app/data/success_message.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_data_pasien_baru.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_konfirmasi_antrian.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -49,14 +48,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
   }
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   void dispose() {
-    // TODO: implement dispose
     tglLahirPasien.dispose();
     super.dispose();
   }
