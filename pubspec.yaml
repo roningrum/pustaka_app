@@ -39,6 +39,8 @@ dependencies:
   json_annotation: ^4.0.1
   intl: ^0.16.1
   shared_preferences: ^2.0.5
+  sqflite: ^2.0.0+3
+  path: ^1.8.0
 
 dev_dependencies:
   flutter_test:

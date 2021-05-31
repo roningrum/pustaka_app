@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:pustaka_app/const.dart';
+import 'package:pustaka_app/data/local/AntrianQuery.dart';
+import 'package:pustaka_app/data/local/dbHelper/DbHelper.dart';
 import 'package:pustaka_app/widget/custom_dialog_box.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -18,6 +20,7 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
       tglPerikssa,
       tglLahirPasien, namaPasien, alamatPasien, nomorKartuObat, nikPasien, nomorPuskesmas;
 
+  final DbHelper _helper = new DbHelper();
 
   TextEditingController tglPeriksa = TextEditingController();
 
@@ -290,6 +293,7 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
                   child: ElevatedButton(
                       onPressed: () {
                         _openWhatsapp();
+                        _saveToLocal();
                       },
                       child: Text(
                         "Daftar",
@@ -317,6 +321,11 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
     var nomor = nomorPuskesmas;
     final urlWA = "http://api.whatsapp.com/send?phone=$nomor&text=$text";
     await launch(urlWA);
+  }
+
+  void _saveToLocal() {
+    tglPerikssa = tglPeriksa.text;
+    _helper.insert(AntrianQuery.TABLE_NAME, {"nik" : nikPasien, "name" : namaPasien, "tglPeriksa": tglPerikssa, "poli": _chosenPoli});
   }
 }
 
