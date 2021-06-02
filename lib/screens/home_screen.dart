@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_antrian.dart';
@@ -5,6 +7,7 @@ import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/screens/riwayat_antri.dart';
 import 'package:pustaka_app/screens/test_buta_warna/pustaka_buta_warna.dart';
+import 'package:pustaka_app/widget/loading/loading_home.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
 
 import 'asah_otak/asah_otak.dart';
@@ -17,6 +20,19 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _loading;
+
+  @override
+  void initState() {
+    _loading = true;
+    super.initState();
+    Timer.periodic(const Duration(seconds: 3), (timer) {
+      setState(() {
+       _loading = false;
+      });
+      timer.cancel();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Stack(
               children: <Widget>[
                 Column(children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(top: 16.0),
-                    padding: EdgeInsets.symmetric( horizontal: fivePercentWidth(context)),
+                  _loading?LoadingHome():Container(
+                    margin: EdgeInsets.only(right: 16, left: 16),
+                    width: MediaQuery.of(context).size.width,
+                    height: 150,
                     child: Image.asset(
                       'assets/images/Banner.png',
                     ),

@@ -8,6 +8,7 @@ import 'package:pustaka_app/screens/puskesmas/puskesmas_menu_screen.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_peta.dart';
 import 'package:pustaka_app/screens/puskesmas/puskesmas_search.dart';
 import 'package:pustaka_app/screens/riwayat_antri.dart';
+import 'package:pustaka_app/screens/splash_screen/splash_screen.dart';
 import 'package:pustaka_app/screens/test_buta_warna/pustaka_buta_warna.dart';
 
 void main() {
@@ -27,8 +28,9 @@ class MyApp extends StatelessWidget {
           ),
           primaryColor: kPrimaryColor,
         ),
-        initialRoute: HomeScreen.id,
+        initialRoute: SplashScreen.id,
         routes: {
+          SplashScreen.id : (context) => SplashScreen(),
           HomeScreen.id: (context) => HomeScreen(),
           PuskesmasMenuScreen.id: (context) => PuskesmasMenuScreen(),
           PuskesmasPeta.id: (context) => PuskesmasPeta(),
