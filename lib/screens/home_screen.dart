@@ -1,16 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
-import 'package:pustaka_app/screens/daftar_antrian/puskesmas_daftar_antrian.dart';
-import 'package:pustaka_app/screens/lihat_antrian/puskesmas_lihat_antrian.dart';
-import 'package:pustaka_app/screens/puskesmas/puskesmas_menu_screen.dart';
-import 'package:pustaka_app/screens/riwayat_antri.dart';
-import 'package:pustaka_app/screens/test_buta_warna/pustaka_buta_warna.dart';
-import 'package:pustaka_app/widget/loading/loading_home.dart';
-import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
-
-import 'asah_otak/asah_otak.dart';
+import 'package:pustaka_app/screens/home/widget/home_banner.dart';
+import 'package:pustaka_app/screens/home/widget/home_menu.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
@@ -20,20 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _loading;
-
-  @override
-  void initState() {
-    _loading = true;
-    super.initState();
-    Timer.periodic(const Duration(seconds: 3), (timer) {
-      setState(() {
-       _loading = false;
-      });
-      timer.cancel();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,93 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Stack(
               children: <Widget>[
                 Column(children: <Widget>[
-                  _loading?LoadingHome():Container(
-                    margin: EdgeInsets.only(right: 16, left: 16),
-                    width: MediaQuery.of(context).size.width,
-                    height: 150,
-                    child: Image.asset(
-                      'assets/images/Banner.png',
-                    ),
-                  ),
+                HomeBanner(),
                   SizedBox(height: 48),
-                  Container(
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            InkWell(
-                              child: Container(
-                                 child: PustakaIconMenu(
-                                    images: 'assets/menu/puskesmas.svg',
-                                    title: "Puskesmas",
-                                  ),
-                              ),
-                              onTap: (){
-                                Navigator.of(context).pushNamed(PuskesmasMenuScreen.id);
-                              },
-                            ),
-                            InkWell(
-                              child: Container(
-                                 child: PustakaIconMenu(
-                                   images: 'assets/menu/lihatantrian.svg',
-                                   title: "Lihat Antrian",
-                                 ),
-                              ),
-                              onTap: (){
-                                Navigator.of(context).pushNamed(PuskesmasLihatAntrian.id);
-                              },
-                            ),
-
-                            InkWell(
-                              child: Container(
-                                child:    PustakaIconMenu(
-                                  images: 'assets/menu/daftarantri.svg',
-                                  title: "Daftar Antri",
-                                ),
-                              ),
-                              onTap: (){
-                                Navigator.of(context).pushNamed(PuskesmasDaftarAntrian.id);
-                              },
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 16),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            InkWell(
-                              child: PustakaIconMenu(
-                                images: 'assets/menu/riwayat.svg',
-                                title: "Riwayat\nKunjungan",
-                              ),
-                              onTap: (){
-                                Navigator.of(context).pushNamed(RiwayatKunjunganPuskesmas.id);
-                              },
-                            ),
-                            InkWell(
-                              child: PustakaIconMenu(
-                                images: 'assets/menu/butawarna.svg',
-                                title: "Test Buta\nWarna",
-                              ),
-                              onTap: (){
-                                Navigator.of(context).pushNamed(PustakaButaWarna.id);
-                              },
-                            ),
-                            InkWell(
-                              child: PustakaIconMenu(
-                                images: 'assets/menu/asahotak.svg',
-                                title: "Asah Otak",
-                              ),
-                              onTap: (){
-                                Navigator.of(context).pushNamed(AsahOtak.id);
-                              },
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  HomeMenu(),
                   SizedBox(height: 24),
                   Container(
                     child: Row(
@@ -182,7 +75,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           )
       ),
-
     );
   }
 }

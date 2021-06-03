@@ -13,13 +13,24 @@ class _LoadingHomeState extends State<LoadingHome> {
   Widget build(BuildContext context) {
     return Container(
         child: Shimmer.fromColors(
-          baseColor: Colors.grey,
+          baseColor: Colors.grey[300],
           highlightColor: Colors.grey[100],
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: 150,
+          child: Container(
+            margin: EdgeInsets.only(right: 16, left: 16),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 150,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8)
+                ),
+              ),
+            ),
           ),
     )
     );
   }
 }
+
+
