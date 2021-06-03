@@ -9,6 +9,8 @@ import 'package:pustaka_app/screens/riwayat_antri.dart';
 import 'package:pustaka_app/screens/test_buta_warna/pustaka_buta_warna.dart';
 import 'package:shimmer/shimmer.dart';
 
+//home menu here
+
 class HomeMenu extends StatefulWidget {
   const HomeMenu({Key key}) : super(key: key);
 
@@ -87,7 +89,7 @@ class _HomeMenuState extends State<HomeMenu> {
       ),
     );
   }
-
+// loading widget
   Widget menuLoading() {
     return Shimmer.fromColors(
       baseColor: Colors.grey[300],
