@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
+import 'package:pustaka_app/screens/home/widget/home_artikel.dart';
 import 'package:pustaka_app/screens/home/widget/home_banner.dart';
 import 'package:pustaka_app/screens/home/widget/home_menu.dart';
 
@@ -21,60 +22,63 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         title: Text('Pustaka',  style: kPustakaBlackBoldMedium.copyWith(fontSize: 19)),
       ),
-      body: Container(
-          child :SingleChildScrollView(
-            child: Stack(
-              children: <Widget>[
-                Column(children: <Widget>[
-                HomeBanner(),
-                  SizedBox(height: 48),
-                  HomeMenu(),
-                  SizedBox(height: 24),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            'Artikel Kesehatan',
-                            style: kPustakaBlackBoldMedium.copyWith(
-                                fontSize: 15),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Lihat Semua',
-                            style:
-                            kPustakaGreenRegular.copyWith(fontSize: 12),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 200.0,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Image.asset('assets/images/bannerartikel2.png', width: 285, height: 220,),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child:
-                          Image.asset('assets/images/bannerartikel2.png',width: 285, height: 220),
-                        ),
-                      ],
-                    ),
-                  )
-                ])
-              ],
-            ),
+      body: CustomScrollView(
+            slivers: [
+             SliverToBoxAdapter(
+               child:  Column(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                   crossAxisAlignment: CrossAxisAlignment.center,
+                   children: <Widget>[
+                 HomeBanner(),
+                 SizedBox(height: 48),
+                 HomeMenu(),
+                 SizedBox(height: 24),
+                 HomeArtikel()
+                 // Container(
+                 //   child: Row(
+                 //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 //     children: <Widget>[
+                 //       Padding(
+                 //         padding: const EdgeInsets.all(16.0),
+                 //         child: Text(
+                 //           'Artikel Kesehatan',
+                 //           style: kPustakaBlackBoldMedium.copyWith(
+                 //               fontSize: 15),
+                 //         ),
+                 //       ),
+                 //       Padding(
+                 //         padding: const EdgeInsets.all(8.0),
+                 //         child: Text(
+                 //           'Lihat Semua',
+                 //           style:
+                 //           kPustakaGreenRegular.copyWith(fontSize: 12),
+                 //         ),
+                 //       ),
+                 //     ],
+                 //   ),
+                 // ),
+                 // Container(
+                 //   height: 200.0,
+                 //   child: ListView(
+                 //     scrollDirection: Axis.horizontal,
+                 //     children: <Widget>[
+                 //       Padding(
+                 //         padding: EdgeInsets.symmetric(horizontal: 8.0),
+                 //         child: Image.asset('assets/images/bannerartikel2.png', width: 285, height: 220,),
+                 //       ),
+                 //       Padding(
+                 //         padding: EdgeInsets.symmetric(horizontal: 8.0),
+                 //         child:
+                 //         Image.asset('assets/images/bannerartikel2.png',width: 285, height: 220),
+                 //       ),
+                 //     ],
+                 //   ),
+                 // )
+               ]),
+             )
+            ],
           )
-      ),
+
     );
   }
 }

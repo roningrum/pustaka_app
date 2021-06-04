@@ -15,52 +15,41 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation animation;
-  var _visible = true;
 
-  startTime() async{
-    Timer(Duration(seconds: 3), () => Navigator.pushNamed(context, HomeScreen.id));
+  Timer _timer;
+
+  removeScreen(){
+    return _timer = Timer(Duration(seconds:5), (){
+      Navigator.of(context).pushReplacementNamed(HomeScreen.id);
+    });
   }
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-        duration: Duration(seconds: 2),
-        vsync: this);
-    animation = new CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
-    animation.addListener(() {
-      this.setState(() {
-        startTime();
-      });
-    });
-    _controller.forward();
+    removeScreen();
+  }
 
-    setState(() {
-      _visible = !_visible;
-    });
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      backgroundColor: Colors.white,
-      body: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, _){
-          return new Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("Pustaka", style: kPustakaBlackBoldMedium.copyWith(
-                    fontSize: 32
-                ),)
-              ],
-            )
-          );
-        },
-      ),
+    return Scaffold(
+      backgroundColor: kSurfaceColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Pustaka", style: kPustakaBlackBoldMedium.copyWith(
+                fontSize: 32
+            ),)
+          ],
+        )
+        ),
     );
   }
 }
