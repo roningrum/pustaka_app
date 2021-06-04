@@ -28,7 +28,7 @@ class _HomeArtikelState extends State<HomeArtikel> {
                     shrinkWrap: true,
                     itemCount: articles.length,
                     itemBuilder: (context, index) => ListTile(
-                        title: Text(articles[index].title)
+                        title: Text(articles[index].title),
                         )),
               );
             }
