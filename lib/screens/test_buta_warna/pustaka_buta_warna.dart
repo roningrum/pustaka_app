@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../const.dart';
-import '../home_screen.dart';
+import '../home/home_screen.dart';
 
 class PustakaButaWarna extends StatefulWidget {
   static String id = 'buta_warna';

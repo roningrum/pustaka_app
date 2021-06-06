@@ -32,8 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
                  HomeBanner(),
                  SizedBox(height: 48),
                  HomeMenu(),
-                 SizedBox(height: 24),
-                 HomeArtikel()
                  // Container(
                  //   child: Row(
                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,7 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
                  //   ),
                  // )
                ]),
-             )
+             ),
+              SliverToBoxAdapter(
+                  child: HomeArtikel()
+              ),
             ],
           )
 

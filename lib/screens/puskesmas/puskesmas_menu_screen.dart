@@ -8,7 +8,7 @@ import 'package:pustaka_app/screens/puskesmas/puskesmas_search.dart';
 import 'package:pustaka_app/widget/loading_puskesmas_widget.dart';
 import 'package:pustaka_app/widget/puskesmas_item_list.dart';
 import '../../const.dart';
-import '../home_screen.dart';
+import '../home/home_screen.dart';
 
 class PuskesmasMenuScreen extends StatefulWidget {
   static String id = "puskesmas_menu";

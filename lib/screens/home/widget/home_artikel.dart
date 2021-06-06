@@ -26,6 +26,7 @@ class _HomeArtikelState extends State<HomeArtikel> {
                 margin: EdgeInsets.symmetric(vertical: 8.0),
                 child: ListView.builder(
                     shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     itemCount: articles.length,
                     itemBuilder: (context, index) => ListTile(
                         title: Text(articles[index].title),

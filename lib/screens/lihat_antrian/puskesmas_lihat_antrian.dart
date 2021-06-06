@@ -8,7 +8,7 @@ import 'package:pustaka_app/widget/loading_puskesmas_widget.dart';
 import 'package:pustaka_app/widget/puskesmas_antri_list.dart';
 
 import '../../const.dart';
-import '../home_screen.dart';
+import '../home/home_screen.dart';
 
 class PuskesmasLihatAntrian extends StatefulWidget {
   static String id = 'Puskesmas Lihat Antrian';
