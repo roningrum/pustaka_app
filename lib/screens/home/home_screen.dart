@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
                  HomeBanner(),
                  SizedBox(height: 48),
                  HomeMenu(),
+                     SizedBox(height: 48),
                  // Container(
                  //   child: Row(
                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
