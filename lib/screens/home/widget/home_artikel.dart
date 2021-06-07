@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/network/news_response.dart';
 import 'package:pustaka_app/helper/news_api_service.dart';
+import 'package:pustaka_app/screens/home/home_all_health_article.dart';
 import 'package:pustaka_app/screens/home/widget/home_artikel_list.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -44,12 +45,17 @@ class _HomeArtikelState extends State<HomeArtikel> {
                           fontSize: 16, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(right: 24.0),
-                    child: Text(
-                      "Lihat Artikel",
-                      style: kPustakaGreenRegular.copyWith(
-                          fontSize: 12, fontWeight: FontWeight.w100),
+                  InkWell(
+                    onTap: (){
+                      Navigator.of(context).pushNamed(HomeAllHealthArticle.id);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 24.0),
+                      child: Text(
+                        "Lihat Artikel",
+                        style: kPustakaGreenRegular.copyWith(
+                            fontSize: 12, fontWeight: FontWeight.w100),
+                      ),
                     ),
                   ),
                 ],

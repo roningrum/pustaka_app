@@ -317,7 +317,7 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
   }
   void _openWhatsapp() async{
     tglPerikssa = tglPeriksa.text;
-    var text = nikPasien + "%23" + nomorKartuObat + "%23" + namaPasien + "%23" + tglLahirPasien + "%23" + alamatPasien + "%23" + _chosenPoli + "%23" + tglPerikssa + "%23" + _jenisPembayaran;
+    var text = "$nikPasien %23$nomorKartuObat%23$namaPasien%23$tglLahirPasien%23$alamatPasien%23$_chosenPoli%23$tglPerikssa%23$_jenisPembayaran";
     var nomor = nomorPuskesmas;
     final urlWA = "http://api.whatsapp.com/send?phone=$nomor&text=$text";
     await launch(urlWA);

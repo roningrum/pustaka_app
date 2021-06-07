@@ -33,46 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
                  SizedBox(height: 48),
                  HomeMenu(),
                      SizedBox(height: 48),
-                 // Container(
-                 //   child: Row(
-                 //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 //     children: <Widget>[
-                 //       Padding(
-                 //         padding: const EdgeInsets.all(16.0),
-                 //         child: Text(
-                 //           'Artikel Kesehatan',
-                 //           style: kPustakaBlackBoldMedium.copyWith(
-                 //               fontSize: 15),
-                 //         ),
-                 //       ),
-                 //       Padding(
-                 //         padding: const EdgeInsets.all(8.0),
-                 //         child: Text(
-                 //           'Lihat Semua',
-                 //           style:
-                 //           kPustakaGreenRegular.copyWith(fontSize: 12),
-                 //         ),
-                 //       ),
-                 //     ],
-                 //   ),
-                 // ),
-                 // Container(
-                 //   height: 200.0,
-                 //   child: ListView(
-                 //     scrollDirection: Axis.horizontal,
-                 //     children: <Widget>[
-                 //       Padding(
-                 //         padding: EdgeInsets.symmetric(horizontal: 8.0),
-                 //         child: Image.asset('assets/images/bannerartikel2.png', width: 285, height: 220,),
-                 //       ),
-                 //       Padding(
-                 //         padding: EdgeInsets.symmetric(horizontal: 8.0),
-                 //         child:
-                 //         Image.asset('assets/images/bannerartikel2.png',width: 285, height: 220),
-                 //       ),
-                 //     ],
-                 //   ),
-                 // )
                ]),
              ),
               SliverToBoxAdapter(
