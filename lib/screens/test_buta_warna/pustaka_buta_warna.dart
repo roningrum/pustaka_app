@@ -35,39 +35,42 @@ class _PustakaButaWarnaState extends State<PustakaButaWarna> {
         title: Text('Test Buta Warna',
             style: kPustakaBlackRegular.copyWith(fontSize: 19)),
       ),
-      body: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.only(top: 42),
-            child: Center(
-                child: SvgPicture.asset('assets/menu/eye.svg', width: 150, height: 150)),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 8.0),
-            child: Text("Tes Buta Warna untuk Uji Visi warna Mata", style: kPustakaBlackBoldMedium.copyWith(fontSize: 15),),
-          ),
-          Container(
-              margin: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
-              child: RichText(text: TextSpan( children: textSpans), textScaleFactor: 1.0,
-              )
-          ),
-          Container(
-            alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(left: 24, top: 8),
-            child: Text("Ayo mainkan untuk menguji seberapa jauh mata kamu mengenal warna", style: kPustakaBlackRegular.copyWith(fontSize: 13),),
-          ),
-          Container(
-            width: 178,
-            height: 56,
-            margin: EdgeInsets.only(top: 16),
-            child: ElevatedButton.icon(
-              onPressed: (){},
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(kPrimaryColor)),
-              icon: Icon(Icons.play_arrow_rounded, color: Color(0xFF006634),),
-              label: Text('Mainkan', style: kPustakaWhiteNormal.copyWith(fontSize: 13),),
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 42),
+              child: Center(
+                  child: SvgPicture.asset('assets/menu/eye.svg', width: 150, height: 150)),
             ),
-          )
-        ],
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8.0),
+              child: Text("Tes Buta Warna untuk Uji Visi warna Mata", style: kPustakaBlackBoldMedium.copyWith(fontSize: 15),),
+            ),
+            Container(
+                margin: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+                child: RichText(text: TextSpan( children: textSpans), textScaleFactor: 1.0,
+                )
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(left: 24, top: 8),
+              child: Text("Ayo mainkan untuk menguji seberapa jauh mata kamu mengenal warna", style: kPustakaBlackRegular.copyWith(fontSize: 13),),
+            ),
+            Container(
+              width: 178,
+              height: 56,
+              margin: EdgeInsets.only(top: 16),
+              child: ElevatedButton.icon(
+                onPressed: (){},
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(kPrimaryColor)),
+                icon: Icon(Icons.play_arrow_rounded, color: Color(0xFF006634),),
+                label: Text('Mainkan', style: kPustakaWhiteNormal.copyWith(fontSize: 13),),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

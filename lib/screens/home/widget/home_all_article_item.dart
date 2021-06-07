@@ -21,54 +21,70 @@ class HomeAllArticleItem extends StatelessWidget {
     return Card(
       elevation : 0,
       child: Container(
-        height: 100,
+        height: 120,
         margin: EdgeInsets.all(10),
         child: Row(
           children: [
-            Container(
-              width: 97,
-              height: 84,
-              child: CachedNetworkImage(
-                imageUrl: photo,
-                imageBuilder: (context, imageProvider) => Container(
-                  decoration: BoxDecoration(
-                      color: Colors.black26,
-                      image: DecorationImage(
-                          image: imageProvider, fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(8)),
-                ),
-              ),
-            ),
-            SizedBox(width: 12),
+         _displayImage(photo),
+            SizedBox(width: 16),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    title,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: kPustakaBlackBoldMedium.copyWith(
-                        fontSize: 16, fontWeight: FontWeight.bold),
+                  Container(
+                    margin: EdgeInsets.only(top: 8),
+                    child: Text(
+                      title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: kPustakaBlackBoldMedium.copyWith(
+                          fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
                   ),
+                  SizedBox(height: 16,),
                   Row(
                     children:[
                       Container(
-                        margin: EdgeInsets.only(left: 12, top: 10),
-                        child: Text(
-                          getTimeSinceDate(hours),
-                          style: kPustakaBlackRegular.copyWith(
-                              fontSize: 12, fontWeight: FontWeight.w100),
-                        ),
+                        margin: EdgeInsets.only(top: 10),
+                        child:
+                        RichText(
+                          text: TextSpan(
+                              style: kPustakaBlackRegular.copyWith(
+                              fontSize: 12, fontWeight: FontWeight.w100) ,
+                            children: [
+                              WidgetSpan(
+                                  child: Container(
+                                      alignment: Alignment.center,
+                                      margin: EdgeInsets.only(right: 4),
+                                      child: Icon(Icons.access_time_rounded, color: Colors.black45, size: 20,))),
+                              TextSpan(
+                                text: getTimeSinceDate(hours),
+                              ),
+
+                            ]
+                          ),
+                        )
                       ),
                       Container(
-                        margin: EdgeInsets.only(right: 12, top: 10),
-                        child: Text(
-                          source,
-                          style: kPustakaBlackRegular.copyWith(
-                              fontSize: 12, fontWeight: FontWeight.w100),
-                        ),
+                        margin: EdgeInsets.only(left: 12, top: 10),
+                        child:    RichText(
+                          text: TextSpan(
+                              style: kPustakaBlackRegular.copyWith(
+                                  fontSize: 12, fontWeight: FontWeight.w100) ,
+                              children: [
+                                WidgetSpan(
+                                    child: Container(
+                                        alignment: Alignment.center,
+                                        margin: EdgeInsets.only(right: 4),
+                                        child: Icon(Icons.feed_rounded, color: Colors.black45, size: 20,))),
+                                TextSpan(
+                                  text: source,
+                                ),
+
+                              ]
+                          ),
+                        )
                       ),
                     ]
                   ),
@@ -79,6 +95,35 @@ class HomeAllArticleItem extends StatelessWidget {
         ),
       )
     );
+  }
+
+  Widget _displayImage(String photoUrl){
+    if(photoUrl == null){
+      return Container(
+        width: 100,
+        height: 100,
+          decoration: BoxDecoration(
+              color: Colors.black12,
+              borderRadius: BorderRadius.circular(8)
+          )
+      );
+    }
+    else{
+      return Container(
+        width: 100,
+        height: 100,
+        child: CachedNetworkImage(
+          imageUrl: photo,
+          imageBuilder: (context, imageProvider) => Container(
+            decoration: BoxDecoration(
+                color: Colors.black26,
+                image: DecorationImage(
+                    image: imageProvider, fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(8)),
+          ),
+        ),
+      );
+    }
   }
 
   String getTimeSinceDate(String dateString, {bool numericDates = true}){
