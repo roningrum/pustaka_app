@@ -1,3 +1,4 @@
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/asah_otak/asah_otak.dart';

@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/home/widget/home_artikel.dart';
@@ -12,6 +15,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  StreamSubscription sub;
+  bool isConnected = false;
+  
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sub = Connectivity().onConnectivityChanged.listen((result) {
+      setState(() {
+        isConnected = (result != ConnectivityResult.none);
+      });
+    });
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    sub.cancel();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

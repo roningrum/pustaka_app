@@ -61,6 +61,13 @@ class HomeArtikelList extends StatelessWidget {
     else{
       return CachedNetworkImage(
         imageUrl: photoArticle,
+        placeholder: (context, url) =>
+            Container(
+          decoration: BoxDecoration(
+              color: Colors.black12,
+              borderRadius: BorderRadius.circular(8)
+          ),
+        ),
         imageBuilder: (context, imageProvider) =>
             Container(
               decoration: BoxDecoration(
