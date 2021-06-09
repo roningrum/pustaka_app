@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:pustaka_app/widget/custom_dialog_box.dart';
 import 'package:pustaka_app/widget/pustaka_icon_menu.dart';
 
 // widget menu
@@ -23,8 +24,24 @@ class _PustakaMenuState extends State<PustakaMenu> {
         title: widget.title,
       ),
       onTap: (){
-        routeToPage(widget.routePage);
-      },
+        setState(() {
+          if(widget.routePage != ""){
+            routeToPage(widget.routePage);
+          }
+          else{
+            showDialog(context: context, builder: (BuildContext context){
+              return CustomDialogBox(title: "Sedang dalam pengembangan",
+                  descriptions: "Ditunggu di perilisan selanjutnya. selamat menggunakan",
+                  text: "ok",
+                  img: Image.asset(
+                      "assets/images/dialog.png", fit: BoxFit.cover,
+                      width: 100,
+                      height: 100));
+            });
+          }
+        });
+
+      }
     );
   }
 
