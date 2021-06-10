@@ -26,7 +26,7 @@ class _RiwayatKunjunganPuskesmasState extends State<RiwayatKunjunganPuskesmas> {
             Navigator.of(context).pushNamed(HomeScreen.id);
           },
         ),
-        title: Text('Riwatat Kunjungan',
+        title: Text('Riwayat Kunjungan',
             style: kPustakaBlackRegular.copyWith(fontSize: 19)),
       ),
     );

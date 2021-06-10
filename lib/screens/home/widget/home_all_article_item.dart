@@ -42,51 +42,54 @@ class HomeAllArticleItem extends StatelessWidget {
                           fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  SizedBox(height: 16,),
-                  Row(
-                    children:[
-                      Container(
-                        margin: EdgeInsets.only(top: 10),
-                        child:
-                        RichText(
-                          text: TextSpan(
-                              style: kPustakaBlackRegular.copyWith(
-                              fontSize: 12, fontWeight: FontWeight.w100) ,
-                            children: [
-                              WidgetSpan(
-                                  child: Container(
-                                      alignment: Alignment.center,
-                                      margin: EdgeInsets.only(right: 4),
-                                      child: Icon(Icons.access_time_rounded, color: Colors.black45, size: 20,))),
-                              TextSpan(
-                                text: getTimeSinceDate(hours),
-                              ),
-
-                            ]
-                          ),
-                        )
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 12, top: 10),
-                        child:    RichText(
-                          text: TextSpan(
-                              style: kPustakaBlackRegular.copyWith(
-                                  fontSize: 12, fontWeight: FontWeight.w100) ,
+                  SizedBox(height: 16),
+                  Container(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children:[
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          child:
+                          RichText(
+                            text: TextSpan(
+                                style: kPustakaBlackRegular.copyWith(
+                                fontSize: 12, fontWeight: FontWeight.w100) ,
                               children: [
                                 WidgetSpan(
                                     child: Container(
                                         alignment: Alignment.center,
-                                        margin: EdgeInsets.only(right: 4),
-                                        child: Icon(Icons.feed_rounded, color: Colors.black45, size: 20,))),
+                                        margin: EdgeInsets.only(right: 2),
+                                        child: Icon(Icons.access_time_rounded, color: Colors.black45, size: 20,))),
                                 TextSpan(
-                                  text: source,
+                                  text: getTimeSinceDate(hours),
                                 ),
 
                               ]
-                          ),
-                        )
-                      ),
-                    ]
+                            ),
+                          )
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 8, top: 10),
+                          child:    RichText(
+                            text: TextSpan(
+                                style: kPustakaBlackRegular.copyWith(
+                                    fontSize: 11, fontWeight: FontWeight.w100) ,
+                                children: [
+                                  WidgetSpan(
+                                      child: Container(
+                                          alignment: Alignment.center,
+                                          margin: EdgeInsets.only(right: 2),
+                                          child: Icon(Icons.feed_rounded, color: Colors.black45, size: 20,))),
+                                  TextSpan(
+                                    text: source,
+                                  ),
+
+                                ]
+                            ),
+                          )
+                        ),
+                      ]
+                    ),
                   ),
                 ],
               ),
