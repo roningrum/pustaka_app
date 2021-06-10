@@ -77,7 +77,7 @@ class _PuskesmasMenuScreenState extends State<PuskesmasMenuScreen> {
             ),
           ],
           title: Text('Puskesmas',
-              style: kPustakaBlackRegular.copyWith(fontSize: 19)),
+              style: kPustakaBlackBoldMedium.copyWith(fontSize: 19)),
         ),
         body: _loading
             ? LoadingPuskesmas()

@@ -50,21 +50,25 @@ class PuskesmasDetail extends StatelessWidget {
                         width: 280.0,
                         child: Column(
                           children: [
-                            CachedNetworkImage(
-                              imageUrl: puskesmas.foto,
-                              width: 189,
-                              height: 120,
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.black26,
-                                    image: DecorationImage(
-                                        image: imageProvider,
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(8)),
+                            Container(
+                              margin: EdgeInsets.only(top: 20),
+                              child: CachedNetworkImage(
+                                imageUrl: puskesmas.foto,
+                                width: 189,
+                                height: 120,
+                                imageBuilder: (context, imageProvider) =>
+                                    Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.black26,
+                                      image: DecorationImage(
+                                          image: imageProvider,
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.circular(8)),
+                                ),
                               ),
                             ),
                             Container(
+                              margin: EdgeInsets.only(top: 8),
                               padding: EdgeInsets.all(8),
                               child: Text(
                                 puskesmas.nama,
@@ -72,21 +76,6 @@ class PuskesmasDetail extends StatelessWidget {
                                     fontSize: 13, fontWeight: FontWeight.bold),
                               ),
                             ),
-                            RichText(
-                                text: TextSpan(children: [
-                              TextSpan(
-                                text: '1.2 km ',
-                                style:
-                                    kPustakaGreenMedium.copyWith(fontSize: 13),
-                              ),
-                              TextSpan(
-                                text: 'dari posisi',
-                                style: kPustakaBlackRegular.copyWith(
-                                  fontSize: 13,
-                                  color: kFontColor.withOpacity(0.5),
-                                ),
-                              )
-                            ]))
                           ],
                         ),
                       ),

@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pustaka_app/const.dart';
 
 class PuskesmasItemList extends StatelessWidget {
@@ -53,23 +52,6 @@ class PuskesmasItemList extends StatelessWidget {
                               fontSize: 12, fontWeight: FontWeight.w100),
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.only(right: 24, top: 15),
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: RichText(
-                            text: TextSpan(children: [
-                              WidgetSpan(
-                                  child: SvgPicture.asset(
-                                      'assets/menu/place.svg')),
-                              TextSpan(
-                                  text: "1.2km",
-                                  style: kPustakaGreenMedium.copyWith(
-                                      fontSize: 13))
-                            ]),
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 ),

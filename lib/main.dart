@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
                 borderSide: BorderSide(color: kPrimaryColor)),
           ),
           primaryColor: kPrimaryColor,
+          accentColor: kPrimaryColor
         ),
         initialRoute: SplashScreen.id,
         routes: {

@@ -14,8 +14,8 @@ class _LoadingPuskesmasState extends State<LoadingPuskesmas> {
         child: Shimmer.fromColors(
           baseColor: Colors.grey[300],
           highlightColor: Colors.grey[100],
-          child: Column(
-            children :[
+          child: Expanded(
+            child:
               ListView.builder(
                 shrinkWrap: true,
                 itemBuilder: (_, __) => Container(
@@ -37,14 +37,14 @@ class _LoadingPuskesmasState extends State<LoadingPuskesmas> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           SizedBox(
-                              width: MediaQuery.of(context).size.width / 2,
+                              width: MediaQuery.of(context).size.width*0.6,
                               height: 11,
                               child: DecoratedBox(
                                   decoration: BoxDecoration(color: Colors.white))),
                           Container(
                             margin: EdgeInsets.only(right: 12, top: 10),
                             child: SizedBox(
-                                width: MediaQuery.of(context).size.width/ 2,
+                                width: MediaQuery.of(context).size.width*0.6,
                                 height: 11,
                                 child: DecoratedBox(
                                     decoration:
@@ -57,7 +57,7 @@ class _LoadingPuskesmasState extends State<LoadingPuskesmas> {
                               child: Align(
                                   alignment: Alignment.bottomRight,
                                   child: SizedBox(
-                                    width: MediaQuery.of(context).size.width / 2,
+                                    width: MediaQuery.of(context).size.width*0.6,
                                     height: 11,
                                     child: DecoratedBox(
                                         decoration:
@@ -70,7 +70,6 @@ class _LoadingPuskesmasState extends State<LoadingPuskesmas> {
                 ),
                 itemCount: 5,
               )
-            ] ,
           ),
         ));
   }

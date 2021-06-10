@@ -53,7 +53,7 @@ class HomeAllArticleItem extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                                 style: kPustakaBlackRegular.copyWith(
-                                fontSize: 12, fontWeight: FontWeight.w100) ,
+                                fontSize: 10, fontWeight: FontWeight.w100) ,
                               children: [
                                 WidgetSpan(
                                     child: Container(
@@ -73,7 +73,7 @@ class HomeAllArticleItem extends StatelessWidget {
                           child:    RichText(
                             text: TextSpan(
                                 style: kPustakaBlackRegular.copyWith(
-                                    fontSize: 11, fontWeight: FontWeight.w100) ,
+                                    fontSize: 10, fontWeight: FontWeight.w100) ,
                                 children: [
                                   WidgetSpan(
                                       child: Container(
