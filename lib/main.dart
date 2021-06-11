@@ -1,4 +1,3 @@
-import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/screens/asah_otak/asah_otak.dart';
@@ -18,7 +17,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,7 +41,7 @@ class MyApp extends StatelessWidget {
           AsahOtak.id: (context) => AsahOtak(),
           PustakaButaWarna.id: (context) => PustakaButaWarna(),
           RiwayatKunjunganPuskesmas.id: (context) => RiwayatKunjunganPuskesmas(),
-          HomeAllHealthArticle.id: (Context) => HomeAllHealthArticle()
+          HomeAllHealthArticle.id: (context) => HomeAllHealthArticle()
         });
   }
 }

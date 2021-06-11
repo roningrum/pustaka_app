@@ -43,6 +43,7 @@ dependencies:
   path: ^1.8.0
   webview_flutter: ^2.0.8
   connectivity: ^3.0.6
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

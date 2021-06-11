@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pustaka_app/const.dart';
 import 'package:pustaka_app/data/puskesmas.dart';
 import 'package:pustaka_app/widget/puskesmas_info_card.dart';
@@ -92,10 +93,28 @@ class PuskesmasDetail extends StatelessWidget {
                       puskesmas: puskesmas.telepon_kantor,
                     ),
                     InkWell(
-                      child: PuskesmasInfoCard(
-                        iconData: Icons.phone_android_outlined,
-                        puskesmas: puskesmas.telepon,
-                      ),
+                      child: Card(
+                          child: Container(
+                            padding: EdgeInsets.all(16),
+                            height: 56.0,
+                            width: 312.0,
+                            child: RichText(
+                                text: TextSpan(children: [
+                                  WidgetSpan(
+                                    child: Container(
+                                      child: SvgPicture.asset('assets/images/whatsapp.svg'),
+                                    ),
+                                  ),
+                                  WidgetSpan(
+                                      child: Container(
+                                          margin: EdgeInsets.only(left: 12),
+                                          child: Text(
+                                            puskesmas.telepon,
+                                            style: kPustakaBlackRegular.copyWith(
+                                                fontSize: 13, color: kFontColor.withOpacity(0.5)),
+                                          ))),
+                                ])),
+                          )),
                       onTap:() async{
                         var url = "$Whatsapp_URL/${puskesmas.telepon}";
                         await launch(url);

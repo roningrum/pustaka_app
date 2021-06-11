@@ -8,33 +8,36 @@ class PuskesmasAntrianItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          side: BorderSide(
-              color: kPrimaryColor, width: 2, style: BorderStyle.solid)),
-      elevation: 0,
-        child: Container(
-          width: 84,
-          height: 84,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: Text(
-                    nama_loket,
-                    style: kPustakaGreenRegular.copyWith(fontSize: 13),
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 8.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            side: BorderSide(
+                color: kPrimaryColor, width: 2, style: BorderStyle.solid)),
+        elevation: 0,
+          child: Container(
+            width: 84,
+            height: 84,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Text(
+                      nama_loket,
+                      style: kPustakaGreenRegular.copyWith(fontSize: 13),
+                    ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 8),
-                  child: Text(
-                    nomor_loket,
-                    style: kPustakaGreenRegular.copyWith(fontSize: 23),
+                  Container(
+                    margin: EdgeInsets.only(top: 8),
+                    child: Text(
+                      nomor_loket,
+                      style: kPustakaGreenRegular.copyWith(fontSize: 23),
+                    ),
                   ),
-                ),
-              ],),
-        ),
+                ],),
+          ),
+      ),
     );
   }
 }
