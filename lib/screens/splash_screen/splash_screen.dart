@@ -85,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen>
                 style: kPustakaBlackBoldMedium.copyWith(
                     fontSize: 12,
                     height: 1.2,
-                    letterSpacing: 0.25,
+                    color: Colors.black38,
                     fontWeight: FontWeight.w300),
               ),
             ),

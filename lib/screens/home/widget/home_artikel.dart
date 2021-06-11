@@ -7,6 +7,8 @@ import 'package:pustaka_app/screens/home/home_all_health_article.dart';
 import 'package:pustaka_app/screens/home/widget/home_artikel_list.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../home_all_article_detail.dart';
+
 class HomeArtikel extends StatefulWidget {
   const HomeArtikel({Key key}) : super(key: key);
 
@@ -74,10 +76,20 @@ class _HomeArtikelState extends State<HomeArtikel> {
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             itemCount: 10,
-                            itemBuilder: (context, index) => HomeArtikelList(
-                                  photoArticle: articles[index].urlToImage,
-                                  titleArticle: articles[index].title,
-                                )),
+                            itemBuilder: (context, index) => InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            HomeArticleDetail(
+                                                articles: articles[index])));
+                              },
+                              child: HomeArtikelList(
+                                    photoArticle: articles[index].urlToImage,
+                                    titleArticle: articles[index].title,
+                                  ),
+                            )),
                       );
                     } else {
                       return _loadingImageArticle();
