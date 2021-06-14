@@ -14,8 +14,7 @@ class _LoadingPuskesmasState extends State<LoadingPuskesmas> {
         child: Shimmer.fromColors(
           baseColor: Colors.grey[300],
           highlightColor: Colors.grey[100],
-          child: Expanded(
-            child:
+          child:
               ListView.builder(
                 shrinkWrap: true,
                 itemBuilder: (_, __) => Container(
@@ -71,6 +70,6 @@ class _LoadingPuskesmasState extends State<LoadingPuskesmas> {
                 itemCount: 5,
               )
           ),
-        ));
+        );
   }
 }
