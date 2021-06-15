@@ -117,7 +117,7 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
               child: Row(
                 children: [
                   Container(
-                    width: 280,
+                    width: 270,
                     height: 56,
                     padding: EdgeInsets.all(16),
                     decoration: ShapeDecoration(
@@ -173,10 +173,10 @@ class _KonfirmasiAntrianState extends State<KonfirmasiAntrian> {
                     ]),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 24),
-                    alignment: Alignment.center,
+                    margin: EdgeInsets.only(left: 8),
+                    alignment: Alignment.centerLeft,
                     child: IconButton(
-                        iconSize: 32,
+                        iconSize: 24,
                         icon: Icon(Icons.help_rounded,
                             color: kPrimaryColor.withOpacity(0.5)),
                         onPressed: () {

@@ -151,7 +151,7 @@ class _DaftarDataIdentitasState extends State<DaftarDataIdentitas> {
                           }
                           return null;
                         },
-                        keyboardType: TextInputType.number,
+                        keyboardType:TextInputType.text,
                         controller: kartuObatPasien,
                         decoration: InputDecoration(
                             fillColor: Color(0xFFE9E8E8),

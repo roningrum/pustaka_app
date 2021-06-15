@@ -1,4 +1,4 @@
-package id.go.dinkessemarang.pustaka_app
+package com.universedeveloper.pustaka
 
 import io.flutter.embedding.android.FlutterActivity
 
