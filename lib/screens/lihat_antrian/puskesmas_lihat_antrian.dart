@@ -82,6 +82,13 @@ class _PuskesmasLihatAntrianState extends State<PuskesmasLihatAntrian> {
                     child: Column(
                   children: <Widget>[
                     Container(
+                      margin: EdgeInsets.symmetric(vertical: 16),
+                      child:  Text(
+                        "pilih puskesmas untuk melihat daftar antrian", style: kPustakaBlackRegular.copyWith(fontSize: 13),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Container(
                       child: ListView.builder(
                           itemCount: sarkesList.length,
                           shrinkWrap: true,

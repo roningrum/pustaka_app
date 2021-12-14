@@ -84,7 +84,7 @@ class _PuskesmasDaftarAntrianState extends State<PuskesmasDaftarAntrian> {
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 16),
                         child:  Text(
-                          "Silakan pilih puskesmas", style: kPustakaBlackRegular.copyWith(fontSize: 13),
+                          "Pilih Puskesmas untuk melakukan daftar kunjungan puskesmas", style: kPustakaBlackRegular.copyWith(fontSize: 13),
                           textAlign: TextAlign.center,
                         ),
                       ),

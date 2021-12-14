@@ -45,42 +45,26 @@ class _HomeMenuState extends State<HomeMenu> {
                   ? menuLoading()
                   : PustakaMenu(
                   asset: 'assets/menu/puskesmas.svg',
-                  title: "Puskesmas",
+                  title: "Lihat\nPuskesmas",
                   routePage: PuskesmasMenuScreen.id),
               isLoading
                   ? menuLoading()
                   : PustakaMenu(
-                  asset: 'assets/menu/lihatantrian.svg',
-                  title: "Lihat Antrian",
-                  routePage: PuskesmasLihatAntrian.id),
-              isLoading
-                  ? menuLoading()
-                  : PustakaMenu(
                   asset: 'assets/menu/daftarantri.svg',
-                  title: "Daftar Antri",
+                  title: "Pendaftaran\nKunjungan",
                   routePage: PuskesmasDaftarAntrian.id),
-            ],
-          ),
-          Divider(height: 16, color: Colors.transparent),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              isLoading
-                  ? menuLoading()
-                : PustakaMenu(
-                    asset: 'assets/menu/riwayat.svg',
-                    title: "Riwayat\nKunjungan", routePage: "",),
               isLoading
                   ? menuLoading()
                   : PustakaMenu(
-                  asset: 'assets/menu/butawarna.svg',
-                  title: "Test Buta\nWarna", routePage: "",),
+                  asset: 'assets/menu/lihatantrian.svg',
+                  title: "Lihat Antrian \nPuskesmas",
+                  routePage: PuskesmasLihatAntrian.id),
               isLoading
                   ? menuLoading()
                   : PustakaMenu(
                 asset: 'assets/menu/asahotak.svg',
                 routePage: "",
-                title: "Asah Otak",
+                title: "Game\n Asah Otak",
               ),
             ],
           ),
